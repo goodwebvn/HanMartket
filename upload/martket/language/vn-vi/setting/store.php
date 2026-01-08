@@ -1,0 +1,136 @@
+<?php
+// Heading
+$_['heading_title']                    = 'Cửa hàng';
+
+// Text
+$_['text_settings']                    = 'Cài đặt';
+$_['text_success']                     = 'Thành công: Bạn đã cập nhật cửa hàng!';
+$_['text_list']                        = 'Danh sách cửa hàng';
+$_['text_add']                         = 'Thêm cửa hàng';
+$_['text_edit']                        = 'Chỉnh sửa cửa hàng';
+$_['text_site']                        = 'Chi tiết trang';
+$_['text_meta']                        = 'Thẻ Meta';
+$_['text_items']                       = 'Mục';
+$_['text_shipping']                    = 'Địa chỉ giao hàng';
+$_['text_payment']                     = 'Địa chỉ thanh toán';
+$_['text_product']                     = 'Sản phẩm';
+$_['text_legal']                       = 'Pháp lý';
+$_['text_tax']                         = 'Thuế';
+$_['text_account']                     = 'Tài khoản';
+$_['text_checkout']                    = 'Thanh toán';
+$_['text_stock']                       = 'Tồn kho';
+$_['text_image']                       = 'Kích thước hình ảnh';
+$_['text_region']                      = 'Khu vực';
+$_['text_language']                    = 'Ngôn ngữ';
+$_['text_currency']                    = 'Tiền tệ';
+
+// Column
+$_['column_name']                      = 'Tên cửa hàng';
+$_['column_url']                       = 'URL cửa hàng';
+$_['column_action']                    = 'Thao tác';
+
+// Entry
+$_['entry_url']                        = 'URL cửa hàng';
+$_['entry_meta_title']                 = 'Tiêu đề Meta';
+$_['entry_meta_description']           = 'Mô tả Meta';
+$_['entry_meta_keyword']               = 'Từ khóa Meta';
+$_['entry_layout']                     = 'Bố cục mặc định';
+$_['entry_theme']                      = 'Giao diện';
+$_['entry_name']                       = 'Tên cửa hàng';
+$_['entry_owner']                      = 'Chủ cửa hàng';
+$_['entry_address']                    = 'Địa chỉ';
+$_['entry_geocode']                    = 'Geocode';
+$_['entry_email']                      = 'E-Mail';
+$_['entry_telephone']                  = 'Điện thoại';
+$_['entry_image']                      = 'Hình ảnh';
+$_['entry_open']                       = 'Giờ mở cửa';
+$_['entry_comment']                    = 'Ghi chú';
+$_['entry_location']                   = 'Vị trí cửa hàng';
+$_['entry_country']                    = 'Quốc gia';
+$_['entry_zone']                       = 'Tỉnh / Thành phố';
+$_['entry_language']                   = 'Ngôn ngữ';
+$_['entry_currency']                   = 'Tiền tệ';
+$_['entry_product_description_length'] = 'Giới hạn mô tả danh sách';
+$_['entry_pagination']                 = 'Số mục mặc định trên trang';
+$_['entry_product_count']              = 'Đếm sản phẩm theo danh mục';
+$_['entry_cookie']                     = 'Chính sách Cookie';
+$_['entry_gdpr']                       = 'Chính sách GDPR';
+$_['entry_tax']                        = 'Hiển thị giá đã bao gồm thuế';
+$_['entry_tax_default']                = 'Dùng địa chỉ cửa hàng để tính thuế';
+$_['entry_tax_customer']               = 'Dùng địa chỉ khách hàng để tính thuế';
+$_['entry_customer_group']             = 'Nhóm khách hàng';
+$_['entry_customer_group_display']     = 'Nhóm khách hàng';
+$_['entry_customer_price']             = 'Giá hiển thị khi đăng nhập';
+$_['entry_account']                    = 'Điều khoản tài khoản';
+$_['entry_cart_weight']                = 'Hiển thị trọng lượng trên trang giỏ hàng';
+$_['entry_checkout_guest']             = 'Thanh toán khách';
+$_['entry_checkout']                   = 'Điều khoản thanh toán';
+$_['entry_stock_display']              = 'Hiển thị tồn kho';
+$_['entry_stock_checkout']             = 'Thanh toán tồn kho';
+$_['entry_logo']                       = 'Logo cửa hàng';
+$_['entry_icon']                       = 'Biểu tượng';
+$_['entry_image_category']             = 'Kích thước hình ảnh danh mục (R x C)';
+$_['entry_image_thumb']                = 'Kích thước hình ảnh sản phẩm thu nhỏ (R x C)';
+$_['entry_image_popup']                = 'Kích thước hình ảnh sản phẩm pop-up (R x C)';
+$_['entry_image_product']              = 'Kích thước hình ảnh danh sách sản phẩm (R x C)';
+$_['entry_image_additional']           = 'Kích thước hình ảnh sản phẩm bổ sung (R x C)';
+$_['entry_image_related']              = 'Kích thước hình ảnh sản phẩm liên quan (R x C)';
+$_['entry_image_article']              = 'Kích thước hình ảnh bài viết (R x C)';
+$_['entry_image_topic']                = 'Kích thước hình ảnh chủ đề (R x C)';
+$_['entry_image_compare']              = 'Kích thước hình ảnh so sánh (R x C)';
+$_['entry_image_wishlist']             = 'Kích thước hình ảnh danh sách yêu thích (R x C)';
+$_['entry_image_cart']                 = 'Kích thước hình ảnh giỏ hàng (R x C)';
+$_['entry_image_location']             = 'Kích thước hình ảnh cửa hàng (R x C)';
+$_['entry_width']                      = 'Chiều rộng';
+$_['entry_height']                     = 'Chiều cao';
+
+// Help
+$_['help_url']                         = 'Bao gồm đầy đủ URL của cửa hàng, kết thúc bằng \'/\'. Ví dụ: http://yourdomain.com/path/';
+$_['help_icon']                        = 'Icon nên là PNG 16px x 16px.';
+$_['help_geocode']                     = 'Nhập geocode vị trí cửa hàng.';
+$_['help_open']                        = 'Điền giờ mở cửa.';
+$_['help_comment']                     = 'Ghi chú đặc biệt cho khách, ví dụ: Không nhận séc.';
+$_['help_currency']                    = 'Thay đổi tiền tệ mặc định. Xóa cache để thấy thay đổi.';
+$_['help_pagination']                  = 'Số lượng mục hiển thị trên mỗi trang (sản phẩm, danh mục, v.v.)';
+$_['help_product_description_length']  = 'Giới hạn ký tự mô tả ngắn trong chế độ xem danh sách (danh mục, đặc biệt, v.v.)';
+$_['help_cookie']                      = 'Hiển thị chính sách Cookie theo luật EU.';
+$_['help_gdpr']                        = 'Bật các tính năng GDPR như khách hàng có thể yêu cầu xóa tài khoản.';
+$_['help_tax_default']                 = 'Sử dụng địa chỉ cửa hàng để tính thuế nếu khách hàng không đăng nhập. Bạn có thể chọn sử dụng địa chỉ cửa hàng cho địa chỉ giao hàng hoặc thanh toán của khách hàng.';
+$_['help_tax_customer']                = 'Sử dụng địa chỉ mặc định của khách hàng khi họ đăng nhập để tính thuế. Bạn có thể chọn sử dụng địa chỉ mặc định cho địa chỉ giao hàng hoặc thanh toán của khách hàng.';
+$_['help_customer_group']              = 'Nhóm khách hàng mặc định.';
+$_['help_customer_group_display']      = 'Hiển thị các nhóm khách hàng mà khách hàng mới có thể chọn khi đăng ký, chẳng hạn như bán buôn và doanh nghiệp.';
+$_['help_customer_price']              = 'Chỉ hiển thị giá khi khách hàng đã đăng nhập.';
+$_['help_account']                     = 'Buộc người dùng phải đồng ý với các điều khoản trước khi tạo tài khoản.';
+$_['help_checkout_guest']              = 'Cho phép khách hàng thanh toán mà không cần tạo tài khoản. Tùy chọn này sẽ không khả dụng khi có sản phẩm có thể tải xuống trong giỏ hàng.';
+$_['help_checkout']                    = 'Buộc người dùng phải đồng ý với các điều khoản trước khi thanh toán.';
+$_['help_stock_display']               = 'Hiển thị số lượng tồn kho trên trang sản phẩm.';
+$_['help_stock_checkout']              = 'Cho phép khách hàng thanh toán ngay cả khi sản phẩm họ đặt hàng không có sẵn trong kho.';
+$_['help_product_count']               = 'Hiển thị số lượng sản phẩm trong các danh mục con trong menu danh mục của tiêu đề cửa hàng. Lưu ý, điều này có thể gây ảnh hưởng lớn đến hiệu suất đối với các cửa hàng có nhiều danh mục con!';
+
+// Error
+$_['error_warning']                    = 'Cảnh báo: Vui lòng kiểm tra biểu mẫu để tìm lỗi!';
+$_['error_permission']                 = 'Cảnh báo: Bạn không có quyền thay đổi cửa hàng!';
+$_['error_url']                        = 'URL cửa hàng bắt buộc!';
+$_['error_meta_title']                 = 'Tiêu đề phải có từ 3 đến 32 ký tự!';
+$_['error_name']                       = 'Tên cửa hàng phải có từ 3 đến 32 ký tự!';
+$_['error_owner']                      = 'Chủ cửa hàng phải có từ 3 đến 64 ký tự!';
+$_['error_address']                    = 'Địa chỉ phải có từ 10 đến 256 ký tự!';
+$_['error_email']                      = 'E-Mail không hợp lệ!';
+$_['error_product_description_length'] = 'Yêu cầu chiều dài mô tả sản phẩm!';
+$_['error_pagination']                 = 'Yêu cầu phân trang!';
+$_['error_customer_group_display']     = 'Bạn phải bao gồm nhóm khách hàng mặc định nếu bạn định sử dụng tính năng này!';
+$_['error_default']                    = 'Cảnh báo: Bạn không thể xóa cửa hàng mặc định!';
+$_['error_order']                      = 'Cảnh báo: Cửa hàng này không thể bị xóa vì hiện tại nó đang được gán cho %s đơn hàng!';
+$_['error_subscription']               = 'Cảnh báo: Cửa hàng này không thể bị xóa vì hiện tại nó đang được gán cho %s gói đăng ký!';
+$_['error_image_thumb']                = 'Yêu cầu kích thước hình ảnh thu nhỏ sản phẩm!';
+$_['error_image_popup']                = 'Yêu cầu kích thước hình ảnh pop-up sản phẩm!';
+$_['error_image_product']              = 'Yêu cầu kích thước hình ảnh danh sách sản phẩm!';
+$_['error_image_category']             = 'Yêu cầu kích thước hình ảnh danh mục!';
+$_['error_image_additional']           = 'Yêu cầu kích thước hình ảnh bổ sung sản phẩm!';
+$_['error_image_related']              = 'Yêu cầu kích thước hình ảnh sản phẩm liên quan!';
+$_['error_image_article']              = 'Yêu cầu kích thước hình ảnh bài viết!';
+$_['error_image_topic']                = 'Yêu cầu kích thước hình ảnh chủ đề!';
+$_['error_image_compare']              = 'Yêu cầu kích thước hình ảnh so sánh!';
+$_['error_image_wishlist']             = 'Yêu cầu kích thước hình ảnh danh sách yêu thích!';
+$_['error_image_cart']                 = 'Yêu cầu kích thước hình ảnh giỏ hàng!';
+$_['error_image_location']             = 'Yêu cầu kích thước hình ảnh cửa hàng!';

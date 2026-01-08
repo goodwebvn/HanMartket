@@ -7,13 +7,12 @@
       {% if price %}
         <div class="price">
           {% if not special %}
-            <span class="price-new"><x-currency code="{{ currency }}" amount="{{ price }}"></x-currency></span>
+            <span class="price-new">{{ price }}</span>
           {% else %}
-            <span class="price-new"><x-currency code="{{ currency }}" amount="{{ special }}"></x-currency></span>
-            <span class="price-old"><x-currency code="{{ currency }}" amount="{{ price }}"></x-currency></span>
+            <span class="price-new">{{ special }}</span> <span class="price-old">{{ price }}</span>
           {% endif %}
           {% if tax %}
-            <span class="price-tax">{{ text_tax }} <x-currency code="{{ currency }}" amount="{{ tax }}"></x-currency></span>
+            <span class="price-tax">{{ text_tax }} {{ tax }}</span>
           {% endif %}
         </div>
       {% endif %}
@@ -31,9 +30,9 @@
     </div>
     <form method="post" data-oc-toggle="ajax" data-oc-load="{{ cart }}" data-oc-target="#cart">
       <div class="button">
-        <button type="submit" formaction="{{ cart_add }}" title="{{ button_cart }}"><i class="fa-solid fa-shopping-cart"></i></button>
-        <button type="submit" formaction="{{ wishlist_add }}" title="{{ button_wishlist }}" ><i class="fa-solid fa-heart"></i></button>
-        <button type="submit" formaction="{{ compare_add }}" title="{{ button_compare }}"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
+        <button type="submit" formaction="{{ cart_add }}" data-bs-toggle="tooltip" title="{{ button_cart }}"><i class="fa-solid fa-shopping-cart"></i></button>
+        <button type="submit" formaction="{{ wishlist_add }}" data-bs-toggle="tooltip" title="{{ button_wishlist }}" ><i class="fa-solid fa-heart"></i></button>
+        <button type="submit" formaction="{{ compare_add }}" data-bs-toggle="tooltip" title="{{ button_compare }}"><i class="fa-solid fa-arrow-right-arrow-left"></i></button>
       </div>
       <input type="hidden" name="product_id" value="{{ product_id }}"/> <input type="hidden" name="quantity" value="{{ minimum }}"/>
     </form>
