@@ -73,19 +73,22 @@ class __TwigTemplate_d61e2dace1c50758c157f9770df36373 extends Template
         // line 10
         yield ($context["heading_title"] ?? null);
         yield "</h1>
+      <hr>
       ";
-        // line 11
+        // line 12
         yield ($context["description"] ?? null);
         yield ($context["content_bottom"] ?? null);
         yield "</div>
     ";
-        // line 12
+        // line 13
         yield ($context["column_right"] ?? null);
         yield "</div>
 </div>
 ";
-        // line 14
+        // line 15
         yield ($context["footer"] ?? null);
+        yield "
+";
         yield from [];
     }
 
@@ -110,7 +113,7 @@ class __TwigTemplate_d61e2dace1c50758c157f9770df36373 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  88 => 14,  83 => 12,  78 => 11,  74 => 10,  70 => 9,  66 => 8,  63 => 7,  52 => 5,  48 => 4,  42 => 1,);
+        return array (  89 => 15,  84 => 13,  79 => 12,  74 => 10,  70 => 9,  66 => 8,  63 => 7,  52 => 5,  48 => 4,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -125,9 +128,11 @@ class __TwigTemplate_d61e2dace1c50758c157f9770df36373 extends Template
   <div class=\"row\">{{ column_left }}
     <div id=\"content\" class=\"col\">{{ content_top }}
       <h1>{{ heading_title }}</h1>
+      <hr>
       {{ description }}{{ content_bottom }}</div>
     {{ column_right }}</div>
 </div>
-{{ footer }}", "catalog/view/template/information/information.twig", "/var/www/html/catalog/view/template/information/information.twig");
+{{ footer }}
+", "catalog/view/template/information/information.twig", "/var/www/html/catalog/view/template/information/information.twig");
     }
 }

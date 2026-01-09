@@ -360,6 +360,14 @@ class ColumnLeft extends \Opencart\System\Engine\Controller {
 				];
 			}
 
+			if ($this->user->hasPermission('access', 'extension/opencart/sale/import_order')) {
+				$sale[] = [
+					'name'     => 'Import đơn hàng',
+					'href'     => $this->url->link('extension/opencart/sale/import_order', 'user_token=' . $this->session->data['user_token']),
+					'children' => []
+				];
+			}
+
 			if ($sale) {
 				$data['menus'][] = [
 					'id'       => 'menu-sale',

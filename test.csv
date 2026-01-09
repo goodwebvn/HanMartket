@@ -1,0 +1,4 @@
+order_code,order_date,customer_name,customer_phone,product_name,quantity,price,payment_method,order_status
+HD001,2026-01-08,Nguyen Van A,0901234567,Thú bông Sin,1,80000,Cash,Complete
+HD001,2026-01-08,Nguyen Van A,0901234567,Thú bông Kitty,1,120000,Cash,Complete
+HD002,2026-01-08,Khách lẻ,,Vịt mũ bảo hiểm,2,100000,Cash,Complete

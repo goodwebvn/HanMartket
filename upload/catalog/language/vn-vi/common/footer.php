@@ -15,4 +15,4 @@ $_['text_account']      = 'Tài khoản của tôi';
 $_['text_order']        = 'Lịch sử đơn hàng';
 $_['text_wishlist']     = 'Yêu thích';
 $_['text_newsletter']   = 'Bản tin';
-$_['text_powered']      = 'Được cung cấp bởi <a href="https://www.opencart.com">OpenCart</a><br/> %s &copy; %s';
+$_['text_powered']      = 'Được cung cấp bởi <a href="https://goodweb.vn">Goodweb.vn</a><br/> %s &copy; %s';
