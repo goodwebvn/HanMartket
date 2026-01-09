@@ -1,6 +1,6 @@
 <?php
 // Text
-$_['text_subject']  = '%s - Affiliate Commission';
-$_['text_received'] = 'Congratulations! You have received a commission payment from the %s affiliate program';
-$_['text_amount']   = 'You have received:';
-$_['text_total']    = 'Your total amount of commission is now:';
+$_['text_subject']  = '%s - Hoa hồng đại lý';
+$_['text_received'] = 'Chúc mừng! Bạn đã nhận được một khoản thanh toán hoa hồng từ chương trình đại lý %s';
+$_['text_amount']   = 'Bạn đã nhận:';
+$_['text_total']    = 'Tổng số hoa hồng của bạn hiện là:';

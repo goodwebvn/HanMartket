@@ -1,16 +1,16 @@
 <?php
 // Heading
-$_['heading_title']     = 'Order Totals';
+$_['heading_title']     = 'Tổng đơn hàng';
 
 // Text
-$_['text_success']      = 'Success: You have modified totals!';
+$_['text_success']      = 'Thành công: Bạn đã cập nhật tổng đơn hàng!';
 
 // Column
-$_['column_name']       = 'Order Totals';
-$_['column_status']     = 'Status';
-$_['column_sort_order'] = 'Sort Order';
-$_['column_action']     = 'Action';
+$_['column_name']       = 'Tổng đơn hàng';
+$_['column_status']     = 'Trạng thái';
+$_['column_sort_order'] = 'Thứ tự';
+$_['column_action']     = 'Thao tác';
 
 // Error
-$_['error_permission']  = 'Warning: You do not have permission to modify totals!';
-$_['error_extension']   = 'Warning: Extension does not exist!';
+$_['error_permission']  = 'Cảnh báo: Bạn không có quyền thay đổi tổng đơn hàng!';
+$_['error_extension']   = 'Cảnh báo: Tiện ích không tồn tại!';

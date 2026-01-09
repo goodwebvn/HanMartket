@@ -1,8 +1,8 @@
 <?php
 // Text
-$_['text_success']    = 'Success: Affiliate commission will be applied to this order!';
-$_['text_remove']     = 'Success: Your affiliate commission has been removed!';
+$_['text_success']    = 'Thành công: Hoa hồng đại lý sẽ được áp dụng cho đơn hàng này!';
+$_['text_remove']     = 'Thành công: Hoa hồng đại lý của bạn đã bị xóa!';
 
 // Error
-$_['error_affiliate'] = 'Warning: Affiliate could not be found!';
-$_['error_order']     = 'Warning: Sub-Total needs to be above 0 for commission to be applied!';
+$_['error_affiliate'] = 'Cảnh báo: Không tìm thấy đại lý!';
+$_['error_order']     = 'Cảnh báo: Tổng phụ phải lớn hơn 0 để tính hoa hồng!';

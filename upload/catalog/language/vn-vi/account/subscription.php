@@ -4,7 +4,7 @@ $_['heading_title']              = 'Subscriptions';
 
 // Text
 $_['text_account']               = 'Account';
-$_['text_success']               = 'Success: Your subscription has successfully been canceled!';
+$_['text_success']               = 'Thành công: Đăng ký của bạn đã bị hủy thành công!';
 $_['text_subscription']          = 'Subscription #%s';
 $_['text_subscription_id']       = 'Subscription ID';
 $_['text_order_id']              = 'Order ID';

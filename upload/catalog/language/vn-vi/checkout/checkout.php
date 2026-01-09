@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title'] = 'Checkout';
+$_['heading_title'] = 'Thanh toán';
 
 // Text
-$_['text_cart']     = 'Shopping Cart';
+$_['text_cart']     = 'Giỏ hàng';

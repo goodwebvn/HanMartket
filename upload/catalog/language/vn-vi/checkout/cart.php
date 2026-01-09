@@ -1,38 +1,38 @@
 <?php
 // Heading
-$_['heading_title']              = 'Shopping Cart';
+$_['heading_title']              = 'Giỏ hàng';
 
 // Text
-$_['text_success']               = 'Success: You have added <a href="%s">%s</a> to your <a href="%s">shopping cart</a>!';
-$_['text_edit']                  = 'Success: You have modified your shopping cart!';
-$_['text_remove']                = 'Success: You have removed an item from your shopping cart!';
-$_['text_login']                 = 'Attention: You must <a href="%s">login</a> or <a href="%s">create an account</a> to view prices!';
-$_['text_no_results']            = 'Your shopping cart is empty!';
-$_['text_model']                 = 'Model';
-$_['text_subscription']          = 'Subscription';
-$_['text_subscription_trial']    = '%s every %d %s(s) for %d payment(s) then ';
-$_['text_subscription_duration'] = '%s every %d %s(s) for %d payment(s)';
-$_['text_subscription_cancel']   = '%s every %d %s(s) until canceled';
-$_['text_day']                   = 'day';
-$_['text_week']                  = 'week';
-$_['text_semi_month']            = 'half-month';
-$_['text_month']                 = 'month';
-$_['text_year']                  = 'year';
-$_['text_points']                = 'Reward Points';
-$_['text_next']                  = 'What would you like to do next?';
-$_['text_next_choice']           = 'Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.';
+$_['text_success']               = 'Thành công: Bạn đã thêm <a href="%s">%s</a> vào <a href="%s">giỏ hàng</a>!';
+$_['text_edit']                  = 'Thành công: Bạn đã chỉnh sửa giỏ hàng của mình!';
+$_['text_remove']                = 'Thành công: Bạn đã xóa một mục khỏi giỏ hàng!';
+$_['text_login']                 = 'Chú ý: Bạn phải <a href="%s">đăng nhập</a> hoặc <a href="%s">tạo tài khoản</a> để xem giá!';
+$_['text_no_results']            = 'Giỏ hàng của bạn đang trống!';
+$_['text_model']                 = 'Mã';
+$_['text_subscription']          = 'Đăng ký';
+$_['text_subscription_trial']    = '%s mỗi %d %s(s) trong %d lần thanh toán sau đó ';
+$_['text_subscription_duration'] = '%s mỗi %d %s(s) trong %d lần thanh toán';
+$_['text_subscription_cancel']   = '%s mỗi %d %s(s) cho đến khi hủy';
+$_['text_day']                   = 'ngày';
+$_['text_week']                  = 'tuần';
+$_['text_semi_month']            = 'nửa tháng';
+$_['text_month']                 = 'tháng';
+$_['text_year']                  = 'năm';
+$_['text_points']                = 'Điểm thưởng';
+$_['text_next']                  = 'Bạn muốn làm gì tiếp theo?';
+$_['text_next_choice']           = 'Chọn nếu bạn có mã giảm giá hoặc điểm thưởng muốn sử dụng hoặc muốn ước tính chi phí giao hàng.';
 
 // Column
-$_['column_image']               = 'Image';
-$_['column_name']                = 'Product';
-$_['column_quantity']            = 'Quantity';
-$_['column_price']               = 'Unit Price';
-$_['column_total']               = 'Total';
+$_['column_image']               = 'Hình';
+$_['column_name']                = 'Sản phẩm';
+$_['column_quantity']            = 'Số lượng';
+$_['column_price']               = 'Đơn giá';
+$_['column_total']               = 'Tổng cộng';
 
 // Error
-$_['error_stock']                = 'Products marked with *** are not available in the desired quantity or not in stock!';
-$_['error_minimum']              = 'Minimum order amount is %s!';
-$_['error_required']             = '%s required!';
-$_['error_regex']                = '%s is not a valid input!';
-$_['error_product']              = 'Warning: Product could not be found!';
-$_['error_subscription']         = 'Subscription Plan is not valid!';
+$_['error_stock']                = 'Sản phẩm đánh dấu *** không có đủ số lượng hoặc không còn trong kho!';
+$_['error_minimum']              = 'Số lượng đặt tối thiểu là %s!';
+$_['error_required']             = '%s là bắt buộc!';
+$_['error_regex']                = '%s không phải là dữ liệu hợp lệ!';
+$_['error_product']              = 'Cảnh báo: Không tìm thấy sản phẩm!';
+$_['error_subscription']         = 'Kế hoạch đăng ký không hợp lệ!';

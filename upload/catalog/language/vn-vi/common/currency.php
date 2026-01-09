@@ -1,6 +1,6 @@
 <?php
 // Text
-$_['text_currency']  = 'Currency';
+$_['text_currency']  = 'Tiền tệ';
 
 // Error
-$_['error_currency'] = 'Warning: Currency is not available!';
+$_['error_currency'] = 'Cảnh báo: Tiền tệ không khả dụng!';

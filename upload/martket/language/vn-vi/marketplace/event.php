@@ -5,8 +5,8 @@ $_['heading_title']    = 'Sự kiện';
 // Text
 $_['text_success']     = 'Thành công: Bạn đã cập nhật sự kiện!';
 $_['text_list']        = 'Danh sách sự kiện';
-$_['text_event']       = 'Events are used by extensions to override the default functionality of your store. If you have issues you can disable or enable the events here.';
-$_['text_info']        = 'Event Information';
+$_['text_event']       = 'Sự kiện được các tiện ích mở rộng sử dụng để ghi đè chức năng mặc định của cửa hàng bạn. Nếu gặp sự cố, bạn có thể vô hiệu hóa hoặc bật các sự kiện tại đây.';
+$_['text_info']        = 'Thông tin sự kiện';
 
 // Column
 $_['column_code']      = 'Mã';

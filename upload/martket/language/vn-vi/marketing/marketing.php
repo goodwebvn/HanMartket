@@ -1,43 +1,43 @@
 <?php
 // Heading
-$_['heading_title']     = 'Marketing Tracking';
+$_['heading_title']     = 'Theo dõi Marketing';
 
 // Text
-$_['text_success']      = 'Success: You have modified marketing tracking!';
-$_['text_list']         = 'Marketing Tracking List';
-$_['text_add']          = 'Add Marketing Tracking';
-$_['text_edit']         = 'Edit Marketing Tracking';
-$_['text_filter']       = 'Filter';
-$_['text_history']      = 'History';
-$_['text_history_add']  = 'Add History';
-$_['text_report']       = 'Reports';
+$_['text_success']      = 'Thành công: Bạn đã cập nhật theo dõi marketing!';
+$_['text_list']         = 'Danh sách theo dõi marketing';
+$_['text_add']          = 'Thêm theo dõi marketing';
+$_['text_edit']         = 'Chỉnh sửa theo dõi marketing';
+$_['text_filter']       = 'Lọc';
+$_['text_history']      = 'Lịch sử';
+$_['text_history_add']  = 'Thêm lịch sử';
+$_['text_report']       = 'Báo cáo';
 
 // Column
-$_['column_name']       = 'Campaign Name';
-$_['column_code']       = 'Code';
-$_['column_clicks']     = 'Clicks';
-$_['column_orders']     = 'Orders';
+$_['column_name']       = 'Tên chiến dịch';
+$_['column_code']       = 'Mã';
+$_['column_clicks']     = 'Lượt nhấp';
+$_['column_orders']     = 'Đơn hàng';
 $_['column_ip']         = 'IP';
-$_['column_account']    = 'Accounts';
-$_['column_store']      = 'Store';
-$_['column_country']    = 'Country';
-$_['column_date_added'] = 'Date Added';
-$_['column_action']     = 'Action';
+$_['column_account']    = 'Tài khoản';
+$_['column_store']      = 'Cửa hàng';
+$_['column_country']    = 'Quốc gia';
+$_['column_date_added'] = 'Ngày thêm';
+$_['column_action']     = 'Thao tác';
 
 // Entry
-$_['entry_name']        = 'Campaign Name';
-$_['entry_description'] = 'Campaign Description';
-$_['entry_code']        = 'Tracking Code';
-$_['entry_example']     = 'Examples';
-$_['entry_date_from']   = 'Date From';
-$_['entry_date_to']     = 'Date To';
+$_['entry_name']        = 'Tên chiến dịch';
+$_['entry_description'] = 'Mô tả chiến dịch';
+$_['entry_code']        = 'Mã theo dõi';
+$_['entry_example']     = 'Ví dụ';
+$_['entry_date_from']   = 'Từ ngày';
+$_['entry_date_to']     = 'Đến ngày';
 
 // Help
-$_['help_code']         = 'The tracking code that will be used to track marketing campaigns.';
-$_['help_example']      = 'So the system can track referrals you need to add the tracking code to the end of the URL linking to your site.';
+$_['help_code']         = 'Mã theo dõi sẽ được sử dụng để theo dõi chiến dịch marketing.';
+$_['help_example']      = 'Để hệ thống có thể theo dõi giới thiệu, bạn cần thêm mã theo dõi vào cuối URL liên kết tới trang web của bạn.';
 
 // Error
-$_['error_permission']  = 'Warning: You do not have permission to modify marketing tracking!';
-$_['error_name']        = 'Campaign must be between 1 and 32 characters!';
-$_['error_code']        = 'Tracking Code required!';
-$_['error_exists']      = 'Tracking code is being used by another campaign!';
+$_['error_permission']  = 'Cảnh báo: Bạn không có quyền thay đổi theo dõi marketing!';
+$_['error_name']        = 'Tên chiến dịch phải từ 1 đến 32 ký tự!';
+$_['error_code']        = 'Cần mã theo dõi!';
+$_['error_exists']      = 'Mã theo dõi đang được sử dụng bởi chiến dịch khác!';

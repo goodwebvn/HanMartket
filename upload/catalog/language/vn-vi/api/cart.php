@@ -1,15 +1,15 @@
 <?php
 // Text
-$_['text_success']       = 'Success: You have modified your shopping cart!';
-$_['text_subscription']  = 'Subscription';
+$_['text_success']       = 'Thành công: Bạn đã chỉnh sửa giỏ hàng!';
+$_['text_subscription']  = 'Gói đăng ký';
 
 // Error
-$_['error_warning']      = 'Warning: Please check the cart carefully for errors!';
-$_['error_product']      = 'Warning: Product could not be found!';
-$_['error_stock']        = 'Product not available in the desired quantity or not in stock!';
-$_['error_minimum']      = 'Minimum order amount for %s is %s!';
-$_['error_option']       = 'Option could not be found!';
-$_['error_option_stock'] = 'Option not available in the desired quantity or not in stock!';
-$_['error_required']     = '%s required!';
-$_['error_regex']        = '%s is not a valid input!';
-$_['error_subscription'] = 'Subscription Plan is not valid!';
+$_['error_warning']      = 'Cảnh báo: Vui lòng kiểm tra giỏ hàng cẩn thận để tìm lỗi!';
+$_['error_product']      = 'Cảnh báo: Không tìm thấy sản phẩm!';
+$_['error_stock']        = 'Sản phẩm không có đủ số lượng hoặc không còn trong kho!';
+$_['error_minimum']      = 'Số lượng đặt tối thiểu cho %s là %s!';
+$_['error_option']       = 'Không tìm thấy tuỳ chọn!';
+$_['error_option_stock'] = 'Tuỳ chọn không có đủ số lượng hoặc không còn trong kho!';
+$_['error_required']     = '%s là bắt buộc!';
+$_['error_regex']        = '%s không phải là dữ liệu hợp lệ!';
+$_['error_subscription'] = 'Kế hoạch đăng ký không hợp lệ!';

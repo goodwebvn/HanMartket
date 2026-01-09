@@ -24,7 +24,7 @@ $_['text_transaction_add']     = 'Thêm giao dịch';
 $_['text_reward']              = 'Điểm thưởng';
 $_['text_reward_add']          = 'Thêm điểm thưởng';
 $_['text_ip']                  = 'Lịch sử IP';
-$_['text_authorize']           = 'Lịch sử Authorize';
+$_['text_authorize']           = 'Lịch sử giao dịch Authorize';
 $_['text_option']              = 'Tùy chọn';
 $_['text_login']               = 'Đăng nhập vào cửa hàng';
 $_['text_unlock']              = 'Mở khóa tài khoản';
@@ -84,7 +84,7 @@ $_['entry_date_from']          = 'Từ ngày';
 $_['entry_date_to']            = 'Đến ngày';
 
 // Tab
-$_['tab_authorize']            = 'Authorize';
+$_['tab_authorize']            = 'Giao dịch Authorize';
 
 // Button
 $_['button_order']             = 'Đơn hàng';

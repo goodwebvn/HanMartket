@@ -1,3 +1,3 @@
 <?php
 // Text
-$_['text_error'] = 'You do not have permission to access this page.';
+$_['text_error'] = 'Bạn không có quyền truy cập trang này.';

@@ -1,17 +1,17 @@
 <?php
 // Text
-$_['text_refine']      = 'Refine Search';
-$_['text_product']     = 'Products';
-$_['text_no_results']  = 'There are no products to list in this category.';
-$_['text_compare']     = 'Product Compare (%s)';
-$_['text_sort']        = 'Sort By';
-$_['text_default']     = 'Default';
-$_['text_name_asc']    = 'Name (A - Z)';
-$_['text_name_desc']   = 'Name (Z - A)';
-$_['text_price_asc']   = 'Price (Low &gt; High)';
-$_['text_price_desc']  = 'Price (High &gt; Low)';
-$_['text_rating_asc']  = 'Rating (Lowest)';
-$_['text_rating_desc'] = 'Rating (Highest)';
-$_['text_model_asc']   = 'Model (A - Z)';
-$_['text_model_desc']  = 'Model (Z - A)';
-$_['text_limit']       = 'Show';
+$_['text_refine']      = 'Thu hẹp tìm kiếm';
+$_['text_product']     = 'Sản phẩm';
+$_['text_no_results']  = 'Không có sản phẩm nào trong danh mục này.';
+$_['text_compare']     = 'So sánh sản phẩm (%s)';
+$_['text_sort']        = 'Sắp xếp';
+$_['text_default']     = 'Mặc định';
+$_['text_name_asc']    = 'Tên (A - Z)';
+$_['text_name_desc']   = 'Tên (Z - A)';
+$_['text_price_asc']   = 'Giá (Thấp → Cao)';
+$_['text_price_desc']  = 'Giá (Cao → Thấp)';
+$_['text_rating_asc']  = 'Đánh giá (Thấp nhất)';
+$_['text_rating_desc'] = 'Đánh giá (Cao nhất)';
+$_['text_model_asc']   = 'Mã (A - Z)';
+$_['text_model_desc']  = 'Mã (Z - A)';
+$_['text_limit']       = 'Hiển thị';

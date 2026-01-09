@@ -1,20 +1,20 @@
 <?php
 // Text
-$_['text_subject']        = '%s - Affiliate Program';
-$_['text_welcome']        = 'Thank you for joining the %s Affiliate Program!';
-$_['text_login']          = 'Your account has now been created and you can log in by using your e-mail address and password by visiting our website or at the following URL:';
-$_['text_approval']       = 'Your account must be approved before you can login. Once approved you can log in by using your e-mail address and password by visiting our website or at the following URL:';
-$_['text_service']        = 'Upon logging in, you will be able to generate tracking codes, track commission payments and edit your account information.';
-$_['text_thanks']         = 'Thanks,';
-$_['text_new_affiliate']  = 'New Affiliate';
-$_['text_signup']         = 'A new affiliate has signed up:';
-$_['text_website']        = 'Web Site:';
-$_['text_customer_group'] = 'Customer Group:';
-$_['text_firstname']      = 'First Name:';
-$_['text_lastname']       = 'Last Name:';
-$_['text_company']        = 'Company:';
+$_['text_subject']        = '%s - Chương trình đại lý';
+$_['text_welcome']        = 'Cảm ơn bạn đã tham gia Chương trình đại lý %s!';
+$_['text_login']          = 'Tài khoản của bạn đã được tạo và bạn có thể đăng nhập bằng email và mật khẩu tại trang web của chúng tôi hoặc theo liên kết sau:';
+$_['text_approval']       = 'Tài khoản của bạn cần được phê duyệt trước khi có thể đăng nhập. Sau khi được phê duyệt bạn có thể đăng nhập bằng email và mật khẩu tại trang web của chúng tôi hoặc theo liên kết sau:';
+$_['text_service']        = 'Khi đăng nhập, bạn sẽ có thể tạo mã theo dõi, theo dõi thanh toán hoa hồng và chỉnh sửa thông tin tài khoản.';
+$_['text_thanks']         = 'Cảm ơn,';
+$_['text_new_affiliate']  = 'Đại lý mới';
+$_['text_signup']         = 'Một đại lý mới vừa đăng ký:';
+$_['text_website']        = 'Trang web:';
+$_['text_customer_group'] = 'Nhóm khách hàng:';
+$_['text_firstname']      = 'Tên:';
+$_['text_lastname']       = 'Họ:';
+$_['text_company']        = 'Công ty:';
 $_['text_email']          = 'E-Mail:';
-$_['text_telephone']      = 'Telephone:';
+$_['text_telephone']      = 'Điện thoại:';
 
 // Button
-$_['button_login']        = 'Login';
+$_['button_login']        = 'Đăng nhập';

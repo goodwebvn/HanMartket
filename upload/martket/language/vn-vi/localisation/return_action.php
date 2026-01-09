@@ -1,21 +1,21 @@
 <?php
 // Heading
-$_['heading_title']    = 'Return Actions';
+$_['heading_title']    = 'Hành động trả hàng';
 
 // Text
-$_['text_success']     = 'Success: You have modified return actions!';
-$_['text_list']        = 'Return Action List';
-$_['text_add']         = 'Add Return Action';
-$_['text_edit']        = 'Edit Return Action';
+$_['text_success']     = 'Thành công: Bạn đã cập nhật hành động trả hàng!';
+$_['text_list']        = 'Danh sách hành động trả hàng';
+$_['text_add']         = 'Thêm hành động trả hàng';
+$_['text_edit']        = 'Chỉnh sửa hành động trả hàng';
 
 // Column
-$_['column_name']      = 'Return Action Name';
-$_['column_action']    = 'Action';
+$_['column_name']      = 'Tên hành động trả hàng';
+$_['column_action']    = 'Thao tác';
 
 // Entry
-$_['entry_name']       = 'Return Action Name';
+$_['entry_name']       = 'Tên hành động trả hàng';
 
 // Error
-$_['error_permission'] = 'Warning: You do not have permission to modify return actions!';
-$_['error_name']       = 'Return Action Name must be between 3 and 64 characters!';
-$_['error_return']     = 'Warning: This return action cannot be deleted as it is currently assigned to %s returned products!';
+$_['error_permission'] = 'Cảnh báo: Bạn không có quyền thay đổi hành động trả hàng!';
+$_['error_name']       = 'Tên hành động trả hàng phải từ 3 đến 64 ký tự!';
+$_['error_return']     = 'Cảnh báo: Hành động này không thể xóa vì đang được gán cho %s sản phẩm trả lại!';

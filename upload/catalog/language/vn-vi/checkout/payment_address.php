@@ -1,33 +1,33 @@
 <?php
 // Heading
-$_['heading_title']         = 'Payment Address';
+$_['heading_title']         = 'Địa chỉ thanh toán';
 
 // Text
-$_['text_address_new']      = 'I want to use a new address';
-$_['text_address_existing'] = 'I want to use an existing address';
-$_['text_success']          = 'Success: You have changed payment address!';
+$_['text_address_new']      = 'Tôi muốn dùng địa chỉ mới';
+$_['text_address_existing'] = 'Tôi muốn dùng địa chỉ hiện có';
+$_['text_success']          = 'Thành công: Bạn đã thay đổi địa chỉ thanh toán!';
 
 // Entry
-$_['entry_address']         = 'Choose Address';
-$_['entry_firstname']       = 'First Name';
-$_['entry_lastname']        = 'Last Name';
-$_['entry_company']         = 'Company';
-$_['entry_address_1']       = 'Address 1';
-$_['entry_address_2']       = 'Address 2';
-$_['entry_postcode']        = 'Post Code';
-$_['entry_city']            = 'City';
-$_['entry_country']         = 'Country';
-$_['entry_zone']            = 'Region / State';
+$_['entry_address']         = 'Chọn địa chỉ';
+$_['entry_firstname']       = 'Tên';
+$_['entry_lastname']        = 'Họ';
+$_['entry_company']         = 'Công ty';
+$_['entry_address_1']       = 'Địa chỉ 1';
+$_['entry_address_2']       = 'Địa chỉ 2';
+$_['entry_postcode']        = 'Mã bưu điện';
+$_['entry_city']            = 'Thành phố';
+$_['entry_country']         = 'Quốc gia';
+$_['entry_zone']            = 'Tỉnh / Thành phố';
 
 // Error
-$_['error_customer']        = 'Customer required!';
-$_['error_address']         = 'Payment address could not be found!';
-$_['error_firstname']       = 'First Name must be between 1 and 32 characters!';
-$_['error_lastname']        = 'Last Name must be between 1 and 32 characters!';
-$_['error_address_1']       = 'Address 1 must be between 3 and 128 characters!';
-$_['error_city']            = 'City must be between 2 and 128 characters!';
-$_['error_postcode']        = 'Postcode must be between 2 and 10 characters!';
-$_['error_country']         = 'Please select a country!';
-$_['error_zone']            = 'Please select a region / state!';
-$_['error_custom_field']    = '%s required!';
-$_['error_regex']           = '%s is not a valid input!';
+$_['error_customer']        = 'Cần thông tin khách hàng!';
+$_['error_address']         = 'Không tìm thấy địa chỉ thanh toán!';
+$_['error_firstname']       = 'Tên phải có độ dài từ 1 đến 32 ký tự!';
+$_['error_lastname']        = 'Họ phải có độ dài từ 1 đến 32 ký tự!';
+$_['error_address_1']       = 'Địa chỉ phải có độ dài từ 3 đến 128 ký tự!';
+$_['error_city']            = 'Thành phố phải có độ dài từ 2 đến 128 ký tự!';
+$_['error_postcode']        = 'Mã bưu điện phải có độ dài từ 2 đến 10 ký tự!';
+$_['error_country']         = 'Vui lòng chọn quốc gia!';
+$_['error_zone']            = 'Vui lòng chọn tỉnh / thành phố!';
+$_['error_custom_field']    = '%s là bắt buộc!';
+$_['error_regex']           = '%s không phải là dữ liệu hợp lệ!';

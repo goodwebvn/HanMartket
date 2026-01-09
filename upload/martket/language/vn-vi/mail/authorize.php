@@ -1,6 +1,6 @@
 <?php
 // Text
-$_['text_subject'] = 'Security';
-$_['text_code']    = 'You must enter the security code in the admin security check.';
+$_['text_subject'] = 'Bảo mật';
+$_['text_code']    = 'Bạn phải nhập mã bảo mật trong phần kiểm tra bảo mật quản trị.';
 $_['text_ip']      = 'IP:';
-$_['text_regards'] = 'Best Regards';
+$_['text_regards'] = 'Trân trọng';

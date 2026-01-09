@@ -1,11 +1,11 @@
 <?php
 // Text
-$_['text_model']        = 'Model';
-$_['text_subscription'] = 'Subscription';
-$_['text_points']       = 'Reward Points';
+$_['text_model']        = 'Mã';
+$_['text_subscription'] = 'Đăng ký';
+$_['text_points']       = 'Điểm thưởng';
 
 // Column
-$_['column_product']    = 'Product';
-$_['column_quantity']   = 'Quantity';
-$_['column_price']      = 'Unit Price';
-$_['column_total']      = 'Total';
+$_['column_product']    = 'Sản phẩm';
+$_['column_quantity']   = 'Số lượng';
+$_['column_price']      = 'Đơn giá';
+$_['column_total']      = 'Tổng cộng';

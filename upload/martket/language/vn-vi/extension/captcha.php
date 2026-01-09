@@ -1,16 +1,16 @@
 <?php
 // Heading
-$_['heading_title']    = 'Captchas';
+$_['heading_title']    = 'Captcha';
 
 // Text
-$_['text_success']     = 'Success: You have modified captchas!';
-$_['text_list']        = 'Captcha List';
+$_['text_success']     = 'Thành công: Bạn đã cập nhật captcha!';
+$_['text_list']        = 'Danh sách Captcha';
 
 // Column
-$_['column_name']      = 'Captcha Name';
-$_['column_status']    = 'Status';
-$_['column_action']    = 'Action';
+$_['column_name']      = 'Tên Captcha';
+$_['column_status']    = 'Trạng thái';
+$_['column_action']    = 'Thao tác';
 
 // Error
-$_['error_permission'] = 'Warning: You do not have permission to modify captchas!';
-$_['error_extension']  = 'Warning: Extension does not exist!';
+$_['error_permission'] = 'Cảnh báo: Bạn không có quyền thay đổi captcha!';
+$_['error_extension']  = 'Cảnh báo: Tiện ích không tồn tại!';

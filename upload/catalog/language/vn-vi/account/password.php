@@ -1,22 +1,22 @@
 <?php
 // Heading
-$_['heading_title']            = 'Change Password';
+$_['heading_title']            = 'Thay đổi mật khẩu';
 
 // Text
-$_['text_account']             = 'Account';
-$_['text_password']            = 'Your Password';
-$_['text_success']             = 'Success: Your password has been successfully updated.';
+$_['text_account']             = 'Tài khoản';
+$_['text_password']            = 'Mật khẩu của bạn';
+$_['text_success']             = 'Thành công: Mật khẩu của bạn đã được cập nhật thành công.';
 
 // Entry
-$_['entry_password']           = 'Password';
-$_['entry_confirm']            = 'Password Confirm';
+$_['entry_password']           = 'Mật khẩu';
+$_['entry_confirm']            = 'Xác nhận mật khẩu';
 
 // Error
-$_['error_token']              = 'Warning: Password token invalid!';
-$_['error_password']           = 'Password must contain a %s and be between %d and 40 characters!';
-$_['error_password_uppercase'] = 'uppercase';
-$_['error_password_lowercase'] = 'lowercase';
-$_['error_password_number']    = 'number';
-$_['error_password_symbol']    = 'symbol';
-$_['error_password_length']    = 'Password must be between %d and 40 characters!';
-$_['error_confirm']            = 'Password confirmation does not match password!';
+$_['error_token']              = 'Cảnh báo: Token mật khẩu không hợp lệ!';
+$_['error_password']           = 'Mật khẩu phải chứa %s và có độ dài từ %d đến 40 ký tự!';
+$_['error_password_uppercase'] = 'ký tự in hoa';
+$_['error_password_lowercase'] = 'ký tự thường';
+$_['error_password_number']    = 'chữ số';
+$_['error_password_symbol']    = 'ký tự đặc biệt';
+$_['error_password_length']    = 'Mật khẩu phải có độ dài từ %d đến 40 ký tự!';
+$_['error_confirm']            = 'Xác nhận mật khẩu không khớp!';
