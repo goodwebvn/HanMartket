@@ -2,9 +2,9 @@
 namespace Opencart\Admin\Controller\Extension\Opencart\Sale;
 /**
  * Class Import Order
- * 
+ *
  * Controller để import đơn hàng từ CSV/Excel
- * 
+ *
  * @package Opencart\Admin\Controller\Extension\Opencart\Sale
  */
 class ImportOrder extends \Opencart\System\Engine\Controller {
@@ -67,6 +67,16 @@ class ImportOrder extends \Opencart\System\Engine\Controller {
 
 		$json = [];
 
+		// Debug log to help diagnose session/login issues
+		$this->log->write('[ImportOrder] upload called; session_user_token=' . ($this->session->data['user_token'] ?? 'NULL') . '; request_method=' . $this->request->server['REQUEST_METHOD']);
+
+        // Expose debug info in response to help client-side troubleshooting
+        $debug = [
+            'session_user_token' => $this->session->data['user_token'] ?? null,
+            'is_user_logged' => method_exists($this->user, 'isLogged') ? ($this->user->isLogged() ? true : false) : null,
+            'request_uri' => $this->request->server['REQUEST_URI'] ?? null
+        ];
+
 		// Kiểm tra quyền
 		if (!$this->user->hasPermission('modify', 'extension/opencart/sale/import_order')) {
 			$json['error'] = $this->language->get('error_permission');
@@ -92,7 +102,6 @@ class ImportOrder extends \Opencart\System\Engine\Controller {
 				$json['error'] = $this->language->get('error_file_size');
 			}
 		}
-
 		if (!$json) {
 			// Load model
 			$this->load->model('extension/opencart/sale/import_order');
@@ -118,6 +127,11 @@ class ImportOrder extends \Opencart\System\Engine\Controller {
 		}
 
 		$this->response->addHeader('Content-Type: application/json');
+		// attach debug info for troubleshooting
+		if (!empty($debug)) {
+			$json['debug'] = $debug;
+		}
+
 		$this->response->setOutput(json_encode($json));
 	}
 

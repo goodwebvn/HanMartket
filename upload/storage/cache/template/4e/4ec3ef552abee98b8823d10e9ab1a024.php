@@ -318,127 +318,200 @@ class __TwigTemplate_19a1b2a4b9d6372e5774702fc29c3c58 extends Template
 <script type=\"text/javascript\"><!--
 \$('#form-import').on('submit', function(e) {
     e.preventDefault();
-    
-    var formData = new FormData(this);
-    
-    var \$button = \$('#button-import');
-    var originalText = \$button.html();
-    
-    \$button.prop('disabled', true).html('<i class=\"fa-solid fa-spinner fa-spin\"></i> ";
-        // line 139
-        yield ($context["text_importing"] ?? null);
+
+    var element = \$('#button-import')[0];
+
+    // Use the same button loading/reset pattern as product_viewed.twig
+    \$(element).button('loading');
+
+    var form = this;
+    var formData = new FormData(form);
+    // Also include user_token in POST body to be safe
+    formData.append('user_token', '";
+        // line 142
+        yield ($context["user_token"] ?? null);
         yield "');
-    \$('#import-result').hide();
-    \$('#result-statistics').html('');
-    \$('#result-errors').hide().html('');
-    
-    // Đảm bảo user_token được truyền trong URL (OpenCart yêu cầu user_token trong GET parameter)
-    var uploadUrl = '";
+
+    // Use the same relative route pattern as core templates (ensures same-origin request and cookies)
+    var uploadUrl = 'index.php?route=extension/opencart/sale/import_order.upload&user_token=";
         // line 145
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(($context["upload"] ?? null), "js");
-        yield "';
-    if (uploadUrl.indexOf('user_token=') === -1) {
-        uploadUrl += (uploadUrl.indexOf('?') === -1 ? '?' : '&') + 'user_token=";
-        // line 147
         yield ($context["user_token"] ?? null);
         yield "';
+    console.log('Import uploadUrl:', uploadUrl);
+
+    // Provide a tiny chain fallback if the global `chain` helper is not available (keeps behavior similar to core)
+    if (typeof chain === 'undefined') {
+        window.chain = (function() {
+            var q = [];
+            var running = false;
+            function next() {
+                var fn = q.shift();
+                if (!fn) { running = false; return; }
+                running = true;
+                var promise = fn();
+                if (promise && typeof promise.then === 'function') {
+                    promise.then(next).catch(next);
+                } else {
+                    // If fn doesn't return a promise, schedule next tick
+                    setTimeout(next, 0);
+                }
+            }
+            return {
+                attach: function(fn) {
+                    q.push(fn);
+                    if (!running) next();
+                }
+            };
+        })();
     }
-    
-    \$.ajax({
-        url: uploadUrl,
-        type: 'POST',
-        data: formData,
-        dataType: 'json',
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function(json) {
-            \$button.prop('disabled', false).html(originalText);
-            
-            if (json['success']) {
-                // Hiển thị kết quả thống kê
-                var statsHtml = '<div class=\"col-md-4\"><div class=\"card bg-primary text-white\"><div class=\"card-body\"><h5>";
-        // line 163
+
+    var first = true; // first request will send the file; subsequent requests may be GETs to json.next
+
+    var upload = function() {
+        return \$.ajax({
+            url: uploadUrl,
+            type: first ? 'POST' : 'GET',
+            data: first ? formData : {},
+            dataType: 'json',
+            cache: false,
+            contentType: first ? false : undefined,
+            processData: !first,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            success: function(json) {
+                console.log(json);
+
+                // Surface debug info from server to help diagnosis
+                if (json && json.debug) {
+                    console.log('Import debug:', json.debug);
+                    var dbg = '<pre style=\"white-space:pre-wrap; font-size:12px;\">Debug: ' + JSON.stringify(json.debug, null, 2) + '</pre>';
+                    \$('#alert').prepend('<div class=\"alert alert-info alert-dismissible\">' + dbg + ' <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
+                }
+
+                \$('.alert-dismissible').remove();
+
+                if (json['error']) {
+                    // Show error alert and reset button
+                    \$('#alert').prepend('<div class=\"alert alert-danger alert-dismissible\"><i class=\"fa-solid fa-circle-exclamation\"></i> ' + json['error'] + ' <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
+
+                    \$(element).button('reset');
+                }
+
+                if (json['text']) {
+                    \$('#alert').prepend('<div class=\"alert alert-success alert-dismissible\"><i class=\"fa-solid fa-circle-exclamation\"></i> ' + json['text'] + ' <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
+                }
+
+                if (json['success']) {
+                    // Hiển thị kết quả thống kê
+                    var statsHtml = '<div class=\"col-md-4\"><div class=\"card bg-primary text-white\"><div class=\"card-body\"><h5>";
+        // line 213
         yield ($context["text_total_rows"] ?? null);
-        yield "</h5><h2>' + json['statistics']['total_rows'] + '</h2></div></div></div>';
-                statsHtml += '<div class=\"col-md-4\"><div class=\"card bg-success text-white\"><div class=\"card-body\"><h5>";
-        // line 164
+        yield "</h5><h2>' + (json['statistics'] && json['statistics']['total_rows'] ? json['statistics']['total_rows'] : 0) + '</h2></div></div></div>';
+                    statsHtml += '<div class=\"col-md-4\"><div class=\"card bg-success text-white\"><div class=\"card-body\"><h5>";
+        // line 214
         yield ($context["text_orders_created"] ?? null);
-        yield "</h5><h2>' + json['statistics']['orders_created'] + '</h2></div></div></div>';
-                statsHtml += '<div class=\"col-md-4\"><div class=\"card bg-info text-white\"><div class=\"card-body\"><h5>";
-        // line 165
+        yield "</h5><h2>' + (json['statistics'] && json['statistics']['orders_created'] ? json['statistics']['orders_created'] : 0) + '</h2></div></div></div>';
+                    statsHtml += '<div class=\"col-md-4\"><div class=\"card bg-info text-white\"><div class=\"card-body\"><h5>";
+        // line 215
         yield ($context["text_products_created"] ?? null);
-        yield "</h5><h2>' + json['statistics']['products_created'] + '</h2></div></div></div>';
-                \$('#result-statistics').html(statsHtml);
-                
-                // Hiển thị lỗi nếu có
-                if (json['statistics']['errors'] && json['statistics']['errors'].length > 0) {
-                    var errorsHtml = '<h5><i class=\"fa-solid fa-exclamation-triangle\"></i> ";
-        // line 170
+        yield "</h5><h2>' + (json['statistics'] && json['statistics']['products_created'] ? json['statistics']['products_created'] : 0) + '</h2></div></div></div>';
+                    \$('#result-statistics').html(statsHtml);
+
+                    // Hiển thị lỗi nếu có
+                    if (json['statistics'] && json['statistics']['errors'] && json['statistics']['errors'].length > 0) {
+                        let errorsHtml = '<h5><i class=\"fa-solid fa-exclamation-triangle\"></i> ";
+        // line 220
         yield ($context["text_errors"] ?? null);
         yield " (' + json['statistics']['errors'].length + ')</h5><ul>';
-                    for (var i = 0; i < json['statistics']['errors'].length; i++) {
-                        errorsHtml += '<li>' + json['statistics']['errors'][i] + '</li>';
+                        for (let i = 0; i < json['statistics']['errors'].length; i++) {
+                            errorsHtml += '<li>' + json['statistics']['errors'][i] + '</li>';
+                        }
+                        errorsHtml += '</ul>';
+                        \$('#result-errors').html(errorsHtml).show();
                     }
-                    errorsHtml += '</ul>';
-                    \$('#result-errors').html(errorsHtml).show();
+
+                    \$('#import-result').show();
+
+                    // Reset form
+                    \$('#form-import')[0].reset();
                 }
-                
-                \$('#import-result').show();
-                
-                // Reset form
-                \$('#form-import')[0].reset();
-            } else {
-                alert(json['error'] || '";
-        // line 183
-        yield ($context["error_unknown"] ?? null);
-        yield "');
-                
+
                 if (json['errors'] && json['errors'].length > 0) {
-                    var errorsHtml = '<h5><i class=\"fa-solid fa-exclamation-triangle\"></i> ";
-        // line 186
+                    let errorsHtml = '<h5><i class=\"fa-solid fa-exclamation-triangle\"></i> ";
+        // line 235
         yield ($context["text_errors"] ?? null);
         yield " (' + json['errors'].length + ')</h5><ul>';
-                    for (var i = 0; i < json['errors'].length; i++) {
+                    for (let i = 0; i < json['errors'].length; i++) {
                         errorsHtml += '<li>' + json['errors'][i] + '</li>';
                     }
                     errorsHtml += '</ul>';
                     \$('#result-errors').html(errorsHtml).show();
                     \$('#import-result').show();
                 }
-            }
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            \$button.prop('disabled', false).html(originalText);
-            
-            // Kiểm tra nếu response là HTML (thường là trang đăng nhập)
-            if (xhr.responseText && xhr.responseText.indexOf('<!DOCTYPE') !== -1) {
-                alert('";
-        // line 201
+
+                if (json['next']) {
+                    // Continue with the next request in the chain
+                    uploadUrl = json['next'];
+                    first = false;
+
+                    chain.attach(upload);
+                } else {
+                    // No next url -> finish and reset button
+                    \$(element).button('reset');
+                }
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                console.log('AJAX error:', thrownError, xhr.status, xhr.statusText);
+                console.log(xhr.responseText);
+
+                // Try to parse JSON error/debug from responseText
+                try {
+                    var parsed = JSON.parse(xhr.responseText);
+                    if (parsed && parsed.debug) {
+                        console.log('Import debug (error response):', parsed.debug);
+                        var dbgErr = '<pre style=\"white-space:pre-wrap; font-size:12px;\">Debug: ' + JSON.stringify(parsed.debug, null, 2) + '</pre>';
+                        \$('#alert').prepend('<div class=\"alert alert-info alert-dismissible\">' + dbgErr + ' <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
+                    }
+                } catch (e) {
+                    // not JSON, ignore
+                }
+
+                \$(element).button('reset');
+
+                // Kiểm tra nếu response là HTML (thường là trang đăng nhập)
+                if (xhr.responseText && xhr.responseText.indexOf('<!DOCTYPE') !== -1) {
+                    \$('#alert').prepend('<div class=\"alert alert-danger alert-dismissible\"><i class=\"fa-solid fa-exclamation-circle\"></i> ";
+        // line 275
         yield ($context["error_upload"] ?? null);
-        yield ": Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại và thử lại.');
-                // Redirect về trang đăng nhập
-                window.location.href = 'index.php?route=common/login';
-            } else {
-                var errorMsg = '";
-        // line 205
+        yield ": Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại và thử lại. <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
+                    // Redirect về trang đăng nhập
+                    window.location.href = 'index.php?route=common/login';
+                } else {
+                    \$('.alert-dismissible').remove();
+                    var errorMsg = '";
+        // line 280
         yield ($context["error_upload"] ?? null);
         yield "';
-                if (xhr.responseJSON && xhr.responseJSON.error) {
-                    errorMsg += ': ' + xhr.responseJSON.error;
-                } else if (thrownError) {
-                    errorMsg += ': ' + thrownError;
-                } else {
-                    errorMsg += ': ' + xhr.statusText + ' (HTTP ' + xhr.status + ')';
+                    if (xhr.responseJSON && xhr.responseJSON.error) {
+                        errorMsg += ': ' + xhr.responseJSON.error;
+                    } else if (thrownError) {
+                        errorMsg += ': ' + thrownError;
+                    } else {
+                        errorMsg += ': ' + xhr.statusText + ' (HTTP ' + xhr.status + ')';
+                    }
+                    \$('#alert').prepend('<div class=\"alert alert-danger alert-dismissible\"><i class=\"fa-solid fa-exclamation-circle\"></i> ' + errorMsg + ' <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
                 }
-                alert(errorMsg);
             }
-        }
-    });
+        });
+    };
+
+    // Start the chain
+    chain.attach(upload);
 });
 //--></script>
 ";
-        // line 219
+        // line 298
         yield ($context["footer"] ?? null);
         yield "
 ";
@@ -466,7 +539,7 @@ class __TwigTemplate_19a1b2a4b9d6372e5774702fc29c3c58 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  442 => 219,  425 => 205,  418 => 201,  400 => 186,  394 => 183,  378 => 170,  370 => 165,  366 => 164,  362 => 163,  343 => 147,  338 => 145,  329 => 139,  308 => 121,  304 => 120,  297 => 116,  293 => 115,  286 => 111,  282 => 110,  275 => 106,  271 => 105,  264 => 101,  260 => 100,  253 => 96,  249 => 95,  242 => 91,  238 => 90,  231 => 86,  227 => 85,  220 => 81,  216 => 80,  207 => 74,  203 => 73,  199 => 72,  191 => 67,  186 => 65,  175 => 57,  165 => 50,  158 => 46,  155 => 45,  140 => 43,  136 => 42,  130 => 39,  123 => 35,  117 => 32,  110 => 28,  107 => 27,  99 => 23,  96 => 22,  88 => 18,  86 => 17,  80 => 13,  69 => 11,  65 => 10,  60 => 8,  51 => 6,  42 => 1,);
+        return array (  515 => 298,  494 => 280,  486 => 275,  443 => 235,  425 => 220,  417 => 215,  413 => 214,  409 => 213,  338 => 145,  332 => 142,  308 => 121,  304 => 120,  297 => 116,  293 => 115,  286 => 111,  282 => 110,  275 => 106,  271 => 105,  264 => 101,  260 => 100,  253 => 96,  249 => 95,  242 => 91,  238 => 90,  231 => 86,  227 => 85,  220 => 81,  216 => 80,  207 => 74,  203 => 73,  199 => 72,  191 => 67,  186 => 65,  175 => 57,  165 => 50,  158 => 46,  155 => 45,  140 => 43,  136 => 42,  130 => 39,  123 => 35,  117 => 32,  110 => 28,  107 => 27,  99 => 23,  96 => 22,  88 => 18,  86 => 17,  80 => 13,  69 => 11,  65 => 10,  60 => 8,  51 => 6,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -603,90 +676,169 @@ class __TwigTemplate_19a1b2a4b9d6372e5774702fc29c3c58 extends Template
 <script type=\"text/javascript\"><!--
 \$('#form-import').on('submit', function(e) {
     e.preventDefault();
-    
-    var formData = new FormData(this);
-    
-    var \$button = \$('#button-import');
-    var originalText = \$button.html();
-    
-    \$button.prop('disabled', true).html('<i class=\"fa-solid fa-spinner fa-spin\"></i> {{ text_importing }}');
-    \$('#import-result').hide();
-    \$('#result-statistics').html('');
-    \$('#result-errors').hide().html('');
-    
-    // Đảm bảo user_token được truyền trong URL (OpenCart yêu cầu user_token trong GET parameter)
-    var uploadUrl = '{{ upload|escape('js') }}';
-    if (uploadUrl.indexOf('user_token=') === -1) {
-        uploadUrl += (uploadUrl.indexOf('?') === -1 ? '?' : '&') + 'user_token={{ user_token }}';
-    }
-    
-    \$.ajax({
-        url: uploadUrl,
-        type: 'POST',
-        data: formData,
-        dataType: 'json',
-        cache: false,
-        contentType: false,
-        processData: false,
-        success: function(json) {
-            \$button.prop('disabled', false).html(originalText);
-            
-            if (json['success']) {
-                // Hiển thị kết quả thống kê
-                var statsHtml = '<div class=\"col-md-4\"><div class=\"card bg-primary text-white\"><div class=\"card-body\"><h5>{{ text_total_rows }}</h5><h2>' + json['statistics']['total_rows'] + '</h2></div></div></div>';
-                statsHtml += '<div class=\"col-md-4\"><div class=\"card bg-success text-white\"><div class=\"card-body\"><h5>{{ text_orders_created }}</h5><h2>' + json['statistics']['orders_created'] + '</h2></div></div></div>';
-                statsHtml += '<div class=\"col-md-4\"><div class=\"card bg-info text-white\"><div class=\"card-body\"><h5>{{ text_products_created }}</h5><h2>' + json['statistics']['products_created'] + '</h2></div></div></div>';
-                \$('#result-statistics').html(statsHtml);
-                
-                // Hiển thị lỗi nếu có
-                if (json['statistics']['errors'] && json['statistics']['errors'].length > 0) {
-                    var errorsHtml = '<h5><i class=\"fa-solid fa-exclamation-triangle\"></i> {{ text_errors }} (' + json['statistics']['errors'].length + ')</h5><ul>';
-                    for (var i = 0; i < json['statistics']['errors'].length; i++) {
-                        errorsHtml += '<li>' + json['statistics']['errors'][i] + '</li>';
-                    }
-                    errorsHtml += '</ul>';
-                    \$('#result-errors').html(errorsHtml).show();
+
+    var element = \$('#button-import')[0];
+
+    // Use the same button loading/reset pattern as product_viewed.twig
+    \$(element).button('loading');
+
+    var form = this;
+    var formData = new FormData(form);
+    // Also include user_token in POST body to be safe
+    formData.append('user_token', '{{ user_token }}');
+
+    // Use the same relative route pattern as core templates (ensures same-origin request and cookies)
+    var uploadUrl = 'index.php?route=extension/opencart/sale/import_order.upload&user_token={{ user_token }}';
+    console.log('Import uploadUrl:', uploadUrl);
+
+    // Provide a tiny chain fallback if the global `chain` helper is not available (keeps behavior similar to core)
+    if (typeof chain === 'undefined') {
+        window.chain = (function() {
+            var q = [];
+            var running = false;
+            function next() {
+                var fn = q.shift();
+                if (!fn) { running = false; return; }
+                running = true;
+                var promise = fn();
+                if (promise && typeof promise.then === 'function') {
+                    promise.then(next).catch(next);
+                } else {
+                    // If fn doesn't return a promise, schedule next tick
+                    setTimeout(next, 0);
                 }
-                
-                \$('#import-result').show();
-                
-                // Reset form
-                \$('#form-import')[0].reset();
-            } else {
-                alert(json['error'] || '{{ error_unknown }}');
-                
+            }
+            return {
+                attach: function(fn) {
+                    q.push(fn);
+                    if (!running) next();
+                }
+            };
+        })();
+    }
+
+    var first = true; // first request will send the file; subsequent requests may be GETs to json.next
+
+    var upload = function() {
+        return \$.ajax({
+            url: uploadUrl,
+            type: first ? 'POST' : 'GET',
+            data: first ? formData : {},
+            dataType: 'json',
+            cache: false,
+            contentType: first ? false : undefined,
+            processData: !first,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            success: function(json) {
+                console.log(json);
+
+                // Surface debug info from server to help diagnosis
+                if (json && json.debug) {
+                    console.log('Import debug:', json.debug);
+                    var dbg = '<pre style=\"white-space:pre-wrap; font-size:12px;\">Debug: ' + JSON.stringify(json.debug, null, 2) + '</pre>';
+                    \$('#alert').prepend('<div class=\"alert alert-info alert-dismissible\">' + dbg + ' <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
+                }
+
+                \$('.alert-dismissible').remove();
+
+                if (json['error']) {
+                    // Show error alert and reset button
+                    \$('#alert').prepend('<div class=\"alert alert-danger alert-dismissible\"><i class=\"fa-solid fa-circle-exclamation\"></i> ' + json['error'] + ' <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
+
+                    \$(element).button('reset');
+                }
+
+                if (json['text']) {
+                    \$('#alert').prepend('<div class=\"alert alert-success alert-dismissible\"><i class=\"fa-solid fa-circle-exclamation\"></i> ' + json['text'] + ' <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
+                }
+
+                if (json['success']) {
+                    // Hiển thị kết quả thống kê
+                    var statsHtml = '<div class=\"col-md-4\"><div class=\"card bg-primary text-white\"><div class=\"card-body\"><h5>{{ text_total_rows }}</h5><h2>' + (json['statistics'] && json['statistics']['total_rows'] ? json['statistics']['total_rows'] : 0) + '</h2></div></div></div>';
+                    statsHtml += '<div class=\"col-md-4\"><div class=\"card bg-success text-white\"><div class=\"card-body\"><h5>{{ text_orders_created }}</h5><h2>' + (json['statistics'] && json['statistics']['orders_created'] ? json['statistics']['orders_created'] : 0) + '</h2></div></div></div>';
+                    statsHtml += '<div class=\"col-md-4\"><div class=\"card bg-info text-white\"><div class=\"card-body\"><h5>{{ text_products_created }}</h5><h2>' + (json['statistics'] && json['statistics']['products_created'] ? json['statistics']['products_created'] : 0) + '</h2></div></div></div>';
+                    \$('#result-statistics').html(statsHtml);
+
+                    // Hiển thị lỗi nếu có
+                    if (json['statistics'] && json['statistics']['errors'] && json['statistics']['errors'].length > 0) {
+                        let errorsHtml = '<h5><i class=\"fa-solid fa-exclamation-triangle\"></i> {{ text_errors }} (' + json['statistics']['errors'].length + ')</h5><ul>';
+                        for (let i = 0; i < json['statistics']['errors'].length; i++) {
+                            errorsHtml += '<li>' + json['statistics']['errors'][i] + '</li>';
+                        }
+                        errorsHtml += '</ul>';
+                        \$('#result-errors').html(errorsHtml).show();
+                    }
+
+                    \$('#import-result').show();
+
+                    // Reset form
+                    \$('#form-import')[0].reset();
+                }
+
                 if (json['errors'] && json['errors'].length > 0) {
-                    var errorsHtml = '<h5><i class=\"fa-solid fa-exclamation-triangle\"></i> {{ text_errors }} (' + json['errors'].length + ')</h5><ul>';
-                    for (var i = 0; i < json['errors'].length; i++) {
+                    let errorsHtml = '<h5><i class=\"fa-solid fa-exclamation-triangle\"></i> {{ text_errors }} (' + json['errors'].length + ')</h5><ul>';
+                    for (let i = 0; i < json['errors'].length; i++) {
                         errorsHtml += '<li>' + json['errors'][i] + '</li>';
                     }
                     errorsHtml += '</ul>';
                     \$('#result-errors').html(errorsHtml).show();
                     \$('#import-result').show();
                 }
-            }
-        },
-        error: function(xhr, ajaxOptions, thrownError) {
-            \$button.prop('disabled', false).html(originalText);
-            
-            // Kiểm tra nếu response là HTML (thường là trang đăng nhập)
-            if (xhr.responseText && xhr.responseText.indexOf('<!DOCTYPE') !== -1) {
-                alert('{{ error_upload }}: Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại và thử lại.');
-                // Redirect về trang đăng nhập
-                window.location.href = 'index.php?route=common/login';
-            } else {
-                var errorMsg = '{{ error_upload }}';
-                if (xhr.responseJSON && xhr.responseJSON.error) {
-                    errorMsg += ': ' + xhr.responseJSON.error;
-                } else if (thrownError) {
-                    errorMsg += ': ' + thrownError;
+
+                if (json['next']) {
+                    // Continue with the next request in the chain
+                    uploadUrl = json['next'];
+                    first = false;
+
+                    chain.attach(upload);
                 } else {
-                    errorMsg += ': ' + xhr.statusText + ' (HTTP ' + xhr.status + ')';
+                    // No next url -> finish and reset button
+                    \$(element).button('reset');
                 }
-                alert(errorMsg);
+            },
+            error: function(xhr, ajaxOptions, thrownError) {
+                console.log('AJAX error:', thrownError, xhr.status, xhr.statusText);
+                console.log(xhr.responseText);
+
+                // Try to parse JSON error/debug from responseText
+                try {
+                    var parsed = JSON.parse(xhr.responseText);
+                    if (parsed && parsed.debug) {
+                        console.log('Import debug (error response):', parsed.debug);
+                        var dbgErr = '<pre style=\"white-space:pre-wrap; font-size:12px;\">Debug: ' + JSON.stringify(parsed.debug, null, 2) + '</pre>';
+                        \$('#alert').prepend('<div class=\"alert alert-info alert-dismissible\">' + dbgErr + ' <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
+                    }
+                } catch (e) {
+                    // not JSON, ignore
+                }
+
+                \$(element).button('reset');
+
+                // Kiểm tra nếu response là HTML (thường là trang đăng nhập)
+                if (xhr.responseText && xhr.responseText.indexOf('<!DOCTYPE') !== -1) {
+                    \$('#alert').prepend('<div class=\"alert alert-danger alert-dismissible\"><i class=\"fa-solid fa-exclamation-circle\"></i> {{ error_upload }}: Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại và thử lại. <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
+                    // Redirect về trang đăng nhập
+                    window.location.href = 'index.php?route=common/login';
+                } else {
+                    \$('.alert-dismissible').remove();
+                    var errorMsg = '{{ error_upload }}';
+                    if (xhr.responseJSON && xhr.responseJSON.error) {
+                        errorMsg += ': ' + xhr.responseJSON.error;
+                    } else if (thrownError) {
+                        errorMsg += ': ' + thrownError;
+                    } else {
+                        errorMsg += ': ' + xhr.statusText + ' (HTTP ' + xhr.status + ')';
+                    }
+                    \$('#alert').prepend('<div class=\"alert alert-danger alert-dismissible\"><i class=\"fa-solid fa-exclamation-circle\"></i> ' + errorMsg + ' <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button></div>');
+                }
             }
-        }
-    });
+        });
+    };
+
+    // Start the chain
+    chain.attach(upload);
 });
 //--></script>
 {{ footer }}
