@@ -56,8 +56,8 @@ class Currency {
 	 *
 	 * $currency = $this->currency->format($number, $currency, $value, $format);
 	 */
-	public function format(float $number, string $currency, float $value = 0, bool $format = true) {
-		if (!isset($this->currencies[$currency])) {
+	public function format(float $number, ?string $currency, float $value = 0, bool $format = true) {
+		if ($currency === null || !isset($this->currencies[$currency])) {
 			return '';
 		}
 

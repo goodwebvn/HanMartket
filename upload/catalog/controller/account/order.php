@@ -372,7 +372,7 @@ class Order extends \Opencart\System\Engine\Controller {
 				$data['totals'][] = ['text' => $this->currency->format($total['value'], $order_info['currency_code'], $order_info['currency_value'])] + $total;
 			}
 
-			$data['comment'] = nl2br($order_info['comment']);
+			$data['comment'] = nl2br((string)($order_info['comment'] ?? ''));
 
 			// History
 			$data['history'] = $this->getHistory();

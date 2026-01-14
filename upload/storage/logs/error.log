@@ -591,3 +591,614 @@
 2026-01-12 14:08:18 - [ImportOrder] upload called; session_user_token=e3a10c97e226a28a885ea2dc3bcd3403; request_method=POST
 2026-01-12 14:09:02 - [ImportOrder] upload called; session_user_token=e3a10c97e226a28a885ea2dc3bcd3403; request_method=POST
 2026-01-12 14:09:17 - [ImportOrder] upload called; session_user_token=e3a10c97e226a28a885ea2dc3bcd3403; request_method=POST
+2026-01-14 08:41:30 - Error: Opencart\System\Library\Cart\Currency::format(): Argument #2 ($currency) must be of type string, null given, called in /var/www/html/extension/opencart/admin/controller/dashboard/recent.php on line 112
+File: /var/www/html/system/library/cart/currency.php
+Line: 59
+
+Backtrace: 0
+File: /var/www/html/extension/opencart/admin/controller/dashboard/recent.php
+Line: 112
+Class: Opencart\System\Library\Cart\Currency
+Function: format
+
+Backtrace: 1
+File: /var/www/html/system/engine/loader.php
+Line: 112
+Class: Opencart\Admin\Controller\Extension\Opencart\Dashboard\Recent
+Function: dashboard
+
+Backtrace: 2
+File: /var/www/html/martket/controller/common/dashboard.php
+Line: 44
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 3
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Common\Dashboard
+Function: index
+
+Backtrace: 4
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:42:03 - Error: Opencart\System\Library\Cart\Currency::format(): Argument #2 ($currency) must be of type string, null given, called in /var/www/html/extension/opencart/admin/controller/dashboard/recent.php on line 112
+File: /var/www/html/system/library/cart/currency.php
+Line: 59
+
+Backtrace: 0
+File: /var/www/html/extension/opencart/admin/controller/dashboard/recent.php
+Line: 112
+Class: Opencart\System\Library\Cart\Currency
+Function: format
+
+Backtrace: 1
+File: /var/www/html/system/engine/loader.php
+Line: 112
+Class: Opencart\Admin\Controller\Extension\Opencart\Dashboard\Recent
+Function: dashboard
+
+Backtrace: 2
+File: /var/www/html/martket/controller/common/dashboard.php
+Line: 44
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 3
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Common\Dashboard
+Function: index
+
+Backtrace: 4
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:42:03 - Error: Opencart\System\Library\Cart\Currency::format(): Argument #2 ($currency) must be of type string, null given, called in /var/www/html/extension/opencart/admin/controller/dashboard/recent.php on line 112
+File: /var/www/html/system/library/cart/currency.php
+Line: 59
+
+Backtrace: 0
+File: /var/www/html/extension/opencart/admin/controller/dashboard/recent.php
+Line: 112
+Class: Opencart\System\Library\Cart\Currency
+Function: format
+
+Backtrace: 1
+File: /var/www/html/system/engine/loader.php
+Line: 112
+Class: Opencart\Admin\Controller\Extension\Opencart\Dashboard\Recent
+Function: dashboard
+
+Backtrace: 2
+File: /var/www/html/martket/controller/common/dashboard.php
+Line: 44
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 3
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Common\Dashboard
+Function: index
+
+Backtrace: 4
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:42:04 - Error: Opencart\System\Library\Cart\Currency::format(): Argument #2 ($currency) must be of type string, null given, called in /var/www/html/extension/opencart/admin/controller/dashboard/recent.php on line 112
+File: /var/www/html/system/library/cart/currency.php
+Line: 59
+
+Backtrace: 0
+File: /var/www/html/extension/opencart/admin/controller/dashboard/recent.php
+Line: 112
+Class: Opencart\System\Library\Cart\Currency
+Function: format
+
+Backtrace: 1
+File: /var/www/html/system/engine/loader.php
+Line: 112
+Class: Opencart\Admin\Controller\Extension\Opencart\Dashboard\Recent
+Function: dashboard
+
+Backtrace: 2
+File: /var/www/html/martket/controller/common/dashboard.php
+Line: 44
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 3
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Common\Dashboard
+Function: index
+
+Backtrace: 4
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:43:19 - Error: Opencart\System\Library\Cart\Currency::format(): Argument #2 ($currency) must be of type string, null given, called in /var/www/html/extension/opencart/admin/controller/dashboard/recent.php on line 112
+File: /var/www/html/system/library/cart/currency.php
+Line: 59
+
+Backtrace: 0
+File: /var/www/html/extension/opencart/admin/controller/dashboard/recent.php
+Line: 112
+Class: Opencart\System\Library\Cart\Currency
+Function: format
+
+Backtrace: 1
+File: /var/www/html/system/engine/loader.php
+Line: 112
+Class: Opencart\Admin\Controller\Extension\Opencart\Dashboard\Recent
+Function: dashboard
+
+Backtrace: 2
+File: /var/www/html/martket/controller/common/dashboard.php
+Line: 44
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 3
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Common\Dashboard
+Function: index
+
+Backtrace: 4
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:43:20 - Error: Opencart\System\Library\Cart\Currency::format(): Argument #2 ($currency) must be of type string, null given, called in /var/www/html/extension/opencart/admin/controller/dashboard/recent.php on line 112
+File: /var/www/html/system/library/cart/currency.php
+Line: 59
+
+Backtrace: 0
+File: /var/www/html/extension/opencart/admin/controller/dashboard/recent.php
+Line: 112
+Class: Opencart\System\Library\Cart\Currency
+Function: format
+
+Backtrace: 1
+File: /var/www/html/system/engine/loader.php
+Line: 112
+Class: Opencart\Admin\Controller\Extension\Opencart\Dashboard\Recent
+Function: dashboard
+
+Backtrace: 2
+File: /var/www/html/martket/controller/common/dashboard.php
+Line: 44
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 3
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Common\Dashboard
+Function: index
+
+Backtrace: 4
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:43:20 - Error: Opencart\System\Library\Cart\Currency::format(): Argument #2 ($currency) must be of type string, null given, called in /var/www/html/extension/opencart/admin/controller/dashboard/recent.php on line 112
+File: /var/www/html/system/library/cart/currency.php
+Line: 59
+
+Backtrace: 0
+File: /var/www/html/extension/opencart/admin/controller/dashboard/recent.php
+Line: 112
+Class: Opencart\System\Library\Cart\Currency
+Function: format
+
+Backtrace: 1
+File: /var/www/html/system/engine/loader.php
+Line: 112
+Class: Opencart\Admin\Controller\Extension\Opencart\Dashboard\Recent
+Function: dashboard
+
+Backtrace: 2
+File: /var/www/html/martket/controller/common/dashboard.php
+Line: 44
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 3
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Common\Dashboard
+Function: index
+
+Backtrace: 4
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:43:34 - Error: Opencart\System\Library\Cart\Currency::format(): Argument #2 ($currency) must be of type string, null given, called in /var/www/html/extension/opencart/admin/controller/dashboard/recent.php on line 112
+File: /var/www/html/system/library/cart/currency.php
+Line: 59
+
+Backtrace: 0
+File: /var/www/html/extension/opencart/admin/controller/dashboard/recent.php
+Line: 112
+Class: Opencart\System\Library\Cart\Currency
+Function: format
+
+Backtrace: 1
+File: /var/www/html/system/engine/loader.php
+Line: 112
+Class: Opencart\Admin\Controller\Extension\Opencart\Dashboard\Recent
+Function: dashboard
+
+Backtrace: 2
+File: /var/www/html/martket/controller/common/dashboard.php
+Line: 44
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 3
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Common\Dashboard
+Function: index
+
+Backtrace: 4
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:43:35 - Error: Opencart\System\Library\Cart\Currency::format(): Argument #2 ($currency) must be of type string, null given, called in /var/www/html/extension/opencart/admin/controller/dashboard/recent.php on line 112
+File: /var/www/html/system/library/cart/currency.php
+Line: 59
+
+Backtrace: 0
+File: /var/www/html/extension/opencart/admin/controller/dashboard/recent.php
+Line: 112
+Class: Opencart\System\Library\Cart\Currency
+Function: format
+
+Backtrace: 1
+File: /var/www/html/system/engine/loader.php
+Line: 112
+Class: Opencart\Admin\Controller\Extension\Opencart\Dashboard\Recent
+Function: dashboard
+
+Backtrace: 2
+File: /var/www/html/martket/controller/common/dashboard.php
+Line: 44
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 3
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Common\Dashboard
+Function: index
+
+Backtrace: 4
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:43:47 - Error: Opencart\System\Library\Cart\Currency::format(): Argument #2 ($currency) must be of type string, null given, called in /var/www/html/extension/opencart/admin/controller/dashboard/recent.php on line 112
+File: /var/www/html/system/library/cart/currency.php
+Line: 59
+
+Backtrace: 0
+File: /var/www/html/extension/opencart/admin/controller/dashboard/recent.php
+Line: 112
+Class: Opencart\System\Library\Cart\Currency
+Function: format
+
+Backtrace: 1
+File: /var/www/html/system/engine/loader.php
+Line: 112
+Class: Opencart\Admin\Controller\Extension\Opencart\Dashboard\Recent
+Function: dashboard
+
+Backtrace: 2
+File: /var/www/html/martket/controller/common/dashboard.php
+Line: 44
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 3
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Common\Dashboard
+Function: index
+
+Backtrace: 4
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:46:12 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 08:46:12 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 08:46:12 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 08:46:12 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 08:46:22 - Error: Opencart\Admin\Model\Localisation\Language::getLanguage(): Argument #1 ($language_id) must be of type int, null given, called in /var/www/html/system/engine/loader.php on line 343
+File: /var/www/html/martket/model/localisation/language.php
+Line: 509
+
+Backtrace: 0
+File: /var/www/html/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Localisation\Language
+Function: getLanguage
+
+Backtrace: 1
+File: /var/www/html/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/martket/model/sale/order.php
+Line: 117
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Sale\Order
+Function: getOrder
+
+Backtrace: 4
+File: /var/www/html/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 5
+File: /var/www/html/martket/controller/sale/order.php
+Line: 634
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 6
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Sale\Order
+Function: info
+
+Backtrace: 7
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 8
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:46:28 - Error: Opencart\Admin\Model\Localisation\Language::getLanguage(): Argument #1 ($language_id) must be of type int, null given, called in /var/www/html/system/engine/loader.php on line 343
+File: /var/www/html/martket/model/localisation/language.php
+Line: 509
+
+Backtrace: 0
+File: /var/www/html/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Localisation\Language
+Function: getLanguage
+
+Backtrace: 1
+File: /var/www/html/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/martket/model/sale/order.php
+Line: 117
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Sale\Order
+Function: getOrder
+
+Backtrace: 4
+File: /var/www/html/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 5
+File: /var/www/html/martket/controller/sale/order.php
+Line: 634
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 6
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Sale\Order
+Function: info
+
+Backtrace: 7
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 8
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:49:53 - Error: Opencart\Admin\Model\Localisation\Language::getLanguage(): Argument #1 ($language_id) must be of type int, null given, called in /var/www/html/system/engine/loader.php on line 343
+File: /var/www/html/martket/model/localisation/language.php
+Line: 509
+
+Backtrace: 0
+File: /var/www/html/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Localisation\Language
+Function: getLanguage
+
+Backtrace: 1
+File: /var/www/html/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /var/www/html/martket/model/sale/order.php
+Line: 117
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /var/www/html/system/engine/loader.php
+Line: 343
+Class: Opencart\Admin\Model\Sale\Order
+Function: getOrder
+
+Backtrace: 4
+File: /var/www/html/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 5
+File: /var/www/html/martket/controller/sale/order.php
+Line: 634
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 6
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Sale\Order
+Function: info
+
+Backtrace: 7
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 8
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 08:51:08 - PHP Unknown:  nl2br(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1032
+2026-01-14 08:51:08 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1119
+2026-01-14 08:51:17 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 08:51:17 - PHP Unknown:  nl2br(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1564
+2026-01-14 08:57:34 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 08:57:34 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 08:57:34 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 08:57:34 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 08:58:04 - PHP Unknown:  nl2br(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1032
+2026-01-14 08:58:04 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1119
+2026-01-14 09:00:47 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 09:00:47 - PHP Unknown:  nl2br(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1564
+2026-01-14 09:00:50 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1119
+2026-01-14 09:00:50 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1119
+2026-01-14 09:00:51 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1119
+2026-01-14 09:00:51 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1119
+2026-01-14 09:00:51 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1119
+2026-01-14 09:02:12 - Error: Call to undefined function Opencart\Admin\Controller\Sale\now()
+File: /var/www/html/martket/controller/sale/order.php
+Line: 1119
+
+Backtrace: 0
+File: /var/www/html/system/engine/action.php
+Line: 96
+Class: Opencart\Admin\Controller\Sale\Order
+Function: info
+
+Backtrace: 1
+File: /var/www/html/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 2
+File: /var/www/html/martket/index.php
+Line: 20
+Function: require_once
+2026-01-14 09:02:55 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 09:02:55 - PHP Unknown:  nl2br(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1564
+2026-01-14 09:03:39 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 09:03:39 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 09:03:39 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 09:03:39 - PHP Unknown:  strtotime(): Passing null to parameter #1 ($datetime) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 401
+2026-01-14 09:11:47 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 09:11:47 - PHP Unknown:  nl2br(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1564
+2026-01-14 09:13:00 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 09:13:00 - PHP Unknown:  nl2br(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1564
+2026-01-14 09:13:01 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 09:13:01 - PHP Unknown:  nl2br(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1564
+2026-01-14 09:13:01 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 09:13:01 - PHP Unknown:  nl2br(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1564
+2026-01-14 09:16:23 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 09:16:23 - PHP Unknown:  nl2br(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1564
+2026-01-14 09:17:06 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 09:17:06 - PHP Unknown:  nl2br(): Passing null to parameter #1 ($string) of type string is deprecated in /var/www/html/martket/controller/sale/order.php on line 1564
+2026-01-14 09:17:31 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 09:17:32 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 09:17:32 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561
+2026-01-14 09:17:33 - PHP Warning:  Trying to access array offset on value of type null in /var/www/html/martket/controller/sale/order.php on line 1561

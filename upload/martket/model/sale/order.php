@@ -114,7 +114,9 @@ class Order extends \Opencart\System\Engine\Model {
 			// Language
 			$this->load->model('localisation/language');
 
-			$language_info = $this->model_localisation_language->getLanguage($order_query->row['language_id']);
+			$language_id = isset($order_query->row['language_id']) ? (int)$order_query->row['language_id'] : (int)$this->config->get('config_language_id');
+
+			$language_info = $this->model_localisation_language->getLanguage($language_id);
 
 			if ($language_info) {
 				$language_code = $language_info['code'];

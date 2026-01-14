@@ -506,7 +506,12 @@ class Language extends \Opencart\System\Engine\Model {
 	 *
 	 * $language_info = $this->model_localisation_language->getLanguage($language_id);
 	 */
-	public function getLanguage(int $language_id): array {
+	public function getLanguage(?int $language_id): array {
+		// If null provided, fallback to configured default language id
+		if ($language_id === null) {
+			$language_id = (int)$this->config->get('config_language_id');
+		}
+
 		$query = $this->db->query("SELECT DISTINCT * FROM `" . DB_PREFIX . "language` WHERE `language_id` = '" . (int)$language_id . "'");
 
 		$language = $query->row;
@@ -521,6 +526,9 @@ class Language extends \Opencart\System\Engine\Model {
 			}
 
 			$language['image'] .= 'language/' . $language['code'] . '/' . $language['code'] . '.png';
+		} else {
+			// Return empty array if not found
+			$language = [];
 		}
 
 		return $language;

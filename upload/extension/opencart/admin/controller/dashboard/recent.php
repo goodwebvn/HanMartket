@@ -104,12 +104,27 @@ class Recent extends \Opencart\System\Engine\Controller {
 		$results = $this->model_sale_order->getOrders($filter_data);
 
 		foreach ($results as $result) {
+			// Ensure we always pass a valid currency code and value to currency->format
+			$currency_code = $result['currency_code'] ?? $this->config->get('config_currency');
+			if (!$currency_code) {
+				$currency_code = $this->config->get('config_currency');
+			}
+
+			$currency_value = 0;
+			if (isset($result['currency_value']) && $result['currency_value']) {
+				$currency_value = (float)$result['currency_value'];
+			} elseif ($currency_code && $this->currency->has($currency_code)) {
+				$currency_value = $this->currency->getValue($currency_code);
+			} else {
+				$currency_value = 1.0;
+			}
+
 			$data['orders'][] = [
 				'order_id'   => $result['order_id'],
 				'customer'   => $result['customer'],
 				'status'     => $result['order_status'],
 				'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
-				'total'      => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
+				'total'      => $this->currency->format((float)$result['total'], (string)$currency_code, (float)$currency_value),
 				'view'       => $this->url->link('sale/order.info', 'user_token=' . $this->session->data['user_token'] . '&order_id=' . $result['order_id'])
 			];
 		}

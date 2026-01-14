@@ -397,8 +397,8 @@ class Order extends \Opencart\System\Engine\Controller {
 			$data['orders'][] = [
 				'order_status'    => $result['order_status'] ? $result['order_status'] : $this->language->get('text_missing'),
 				'total'           => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
-				'date_added'      => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
-				'date_modified'   => date($this->language->get('date_format_short'), strtotime($result['date_modified'])),
+				'date_added'      => date($this->language->get('date_format_short'), strtotime($result['date_added'] ?? 'now')),
+				'date_modified'   => date($this->language->get('date_format_short'), strtotime($result['date_modified'] ?? 'now')),
 				'shipping_method' => $shipping_method,
 				'view'            => $this->url->link('sale/order.info', 'user_token=' . $this->session->data['user_token'] . '&order_id=' . $result['order_id'] . $url)
 			] + $result;
@@ -1029,7 +1029,7 @@ class Order extends \Opencart\System\Engine\Controller {
 
 		// Comment
 		if (!empty($order_info)) {
-			$data['comment'] = nl2br($order_info['comment']);
+			$data['comment'] = nl2br((string)($order_info['comment'] ?? ''));
 		} else {
 			$data['comment'] = '';
 		}
@@ -1115,8 +1115,8 @@ class Order extends \Opencart\System\Engine\Controller {
 			$data['forwarded_ip'] = $order_info['forwarded_ip'];
 			$data['user_agent'] = $order_info['user_agent'];
 			$data['accept_language'] = $order_info['accept_language'];
-			$data['date_added'] = date($this->language->get('date_format_short'), strtotime($order_info['date_added']));
-			$data['date_modified'] = date($this->language->get('date_format_short'), strtotime($order_info['date_modified']));
+			$data['date_added'] = date($this->language->get('date_format_short'), strtotime($order_info['date_added'] ?? 'now'));
+			$data['date_modified'] = date($this->language->get('date_format_short'), strtotime($order_info['date_modified'] ?? 'now'));
 		} else {
 			$data['ip'] = '';
 			$data['forwarded_ip'] = '';
@@ -1547,10 +1547,10 @@ class Order extends \Opencart\System\Engine\Controller {
 				$data['orders'][] = [
 					'order_id'         => $order_id,
 					'invoice_no'       => $invoice_no,
-					'date_added'       => date($this->language->get('date_format_short'), strtotime($order_info['date_added'])),
+					'date_added'       => date($this->language->get('date_format_short'), strtotime($order_info['date_added'] ?? 'now')),
 					'store_name'       => $order_info['store_name'],
 					'store_url'        => rtrim($order_info['store_url'], '/'),
-					'store_address'    => nl2br($store_address),
+					'store_address'    => nl2br($store_address ?? ''),
 					'store_email'      => $store_email,
 					'store_telephone'  => $store_telephone,
 					'email'            => $order_info['email'],
@@ -1558,10 +1558,10 @@ class Order extends \Opencart\System\Engine\Controller {
 					'shipping_address' => $shipping_address,
 					'shipping_method'  => ($order_info['shipping_method'] ? $order_info['shipping_method']['name'] : ''),
 					'payment_address'  => $payment_address,
-					'payment_method'   => $order_info['payment_method']['name'],
+					'payment_method'   => $order_info['payment_method']['name'] ?? 'VND',
 					'product'          => $product_data,
 					'total'            => $total_data,
-					'comment'          => nl2br($order_info['comment'])
+					'comment'          => nl2br($order_info['comment'] ?? '')
 				];
 			}
 		}
@@ -1740,7 +1740,7 @@ class Order extends \Opencart\System\Engine\Controller {
 				$data['orders'][] = [
 					'order_id'         => $order_id,
 					'invoice_no'       => $invoice_no,
-					'date_added'       => date($this->language->get('date_format_short'), strtotime($order_info['date_added'])),
+					'date_added'       => date($this->language->get('date_format_short'), strtotime($order_info['date_added'] ?? 'now')),
 					'store_name'       => $order_info['store_name'],
 					'store_url'        => rtrim($order_info['store_url'], '/'),
 					'store_address'    => nl2br($store_address),
@@ -1801,7 +1801,7 @@ class Order extends \Opencart\System\Engine\Controller {
 			$data['histories'][] = [
 				'comment'    => nl2br($result['comment']),
 				'notify'     => $result['notify'] ? $this->language->get('text_yes') : $this->language->get('text_no'),
-				'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added']))
+				'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'] ?? 'now'))
 			] + $result;
 		}
 

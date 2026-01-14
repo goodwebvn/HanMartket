@@ -153,7 +153,7 @@ class __TwigTemplate_4b553e6945619b3cf7fc726c2c8909bc extends Template
       <a href=\"";
         // line 36
         yield ($context["home"] ?? null);
-        yield "\" class=\"navbar-brand d-none d-lg-block\"><img src=\"view/image/logo.png\" alt=\"";
+        yield "\" class=\"navbar-brand d-none d-lg-block\"><img height=\"50\" src=\"view/image/logo.png\" alt=\"";
         yield ($context["heading_title"] ?? null);
         yield "\" title=\"";
         yield ($context["heading_title"] ?? null);
@@ -356,7 +356,7 @@ class __TwigTemplate_4b553e6945619b3cf7fc726c2c8909bc extends Template
 <div id=\"container\">
   <header id=\"header\" class=\"navbar navbar-expand navbar-light bg-light\">
     <div class=\"container-fluid\">
-      <a href=\"{{ home }}\" class=\"navbar-brand d-none d-lg-block\"><img src=\"view/image/logo.png\" alt=\"{{ heading_title }}\" title=\"{{ heading_title }}\"/></a>
+      <a href=\"{{ home }}\" class=\"navbar-brand d-none d-lg-block\"><img height=\"50\" src=\"view/image/logo.png\" alt=\"{{ heading_title }}\" title=\"{{ heading_title }}\"/></a>
       {% if logged %}
         <button type=\"button\" id=\"button-menu\" class=\"btn btn-link d-inline-block d-lg-none\"><i class=\"fa-solid fa-bars\"></i></button>
         <ul class=\"nav navbar-nav\">

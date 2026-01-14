@@ -172,7 +172,7 @@ class Order extends \Opencart\System\Engine\Controller {
 			$data['order_status'] = '';
 		}
 
-		$data['comment'] = nl2br($order_info['comment']);
+		$data['comment'] = nl2br((string)($order_info['comment'] ?? ''));
 
 		// Payment Address
 		if ($order_info['payment_address_format']) {
@@ -591,7 +591,7 @@ class Order extends \Opencart\System\Engine\Controller {
 				$data['totals'][] = ['value' => html_entity_decode($this->currency->format($order_total['value'], $order_info['currency_code'], $order_info['currency_value']), ENT_NOQUOTES, 'UTF-8')] + $order_total;
 			}
 
-			$data['comment'] = nl2br($order_info['comment']);
+			$data['comment'] = nl2br((string)($order_info['comment'] ?? ''));
 
 			$data['store'] = html_entity_decode($order_info['store_name'], ENT_QUOTES, 'UTF-8');
 			$data['store_url'] = $order_info['store_url'];
