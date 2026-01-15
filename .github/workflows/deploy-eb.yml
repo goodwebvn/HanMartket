@@ -1,0 +1,63 @@
+name: Deploy to Elastic Beanstalk
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-southeast-1
+
+      - name: Zip application
+        run: |
+          zip -r deploy.zip . -x ".git/*" -x ".github/*"
+
+      - name: Upload to S3
+        env:
+          S3_BUCKET: ${{ secrets.EB_S3_BUCKET }}
+        run: |
+          if [ -z "$S3_BUCKET" ]; then
+            echo "Missing EB_S3_BUCKET secret" >&2
+            exit 1
+          fi
+
+          aws s3 cp deploy.zip s3://${S3_BUCKET}/deployments/deploy-${{ github.sha }}.zip
+
+      - name: Create EB application version and update environment
+        env:
+          APP_NAME: ${{ secrets.EB_APP_NAME }}
+          ENV_NAME: ${{ secrets.EB_ENV_NAME }}
+          S3_BUCKET: ${{ secrets.EB_S3_BUCKET }}
+        run: |
+          if [ -z "$APP_NAME" ] || [ -z "$ENV_NAME" ] || [ -z "$S3_BUCKET" ]; then
+            echo "Missing one of EB_APP_NAME, EB_ENV_NAME or EB_S3_BUCKET secrets" >&2
+            exit 1
+          fi
+
+          VERSION_LABEL="${{ github.sha }}-$(date -u +%Y%m%d%H%M%S)"
+
+          aws elasticbeanstalk create-application-version \
+            --application-name "$APP_NAME" \
+            --version-label "$VERSION_LABEL" \
+            --source-bundle S3Bucket="$S3_BUCKET",S3Key="deployments/deploy-${{ github.sha }}.zip"
+
+          aws elasticbeanstalk update-environment \
+            --environment-name "$ENV_NAME" \
+            --version-label "$VERSION_LABEL"
+
+# Notes:
+# - Store these GitHub Secrets in the repository settings: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, EB_APP_NAME, EB_ENV_NAME, EB_S3_BUCKET
+# - The workflow zips the repository root; adjust excludes if you want to exclude additional files.
+
