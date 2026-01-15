@@ -3,8 +3,8 @@
 define('APPLICATION', 'Admin');
 
 // HTTP
-define('HTTP_SERVER', 'http://localhost/martket/');
-define('HTTP_CATALOG', 'http://localhost/');
+define('HTTP_SERVER', 'http://martket.ap-southeast-1.elasticbeanstalk.com/martket/');
+define('HTTP_CATALOG', 'http://martket.ap-southeast-1.elasticbeanstalk.com');
 // DIR
 define('DIR_OPENCART', '/var/www/html/');
 define('DIR_APPLICATION', DIR_OPENCART . 'martket/');
@@ -24,10 +24,10 @@ define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
 
 // DB
 define('DB_DRIVER', 'mysqli');
-define('DB_HOSTNAME', 'mysql');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', 'opencart');
-define('DB_DATABASE', 'opencart');
+define('DB_HOSTNAME', 'hanmartket.cfou0guiwa9v.ap-southeast-1.rds.amazonaws.com');
+define('DB_USERNAME', 'admin');
+define('DB_PASSWORD', 'G0s30C8s4sAMOOTvQV44');
+define('DB_DATABASE', 'HanMartket');
 define('DB_PREFIX', 'oc_');
 define('DB_PORT', '3306');
 
