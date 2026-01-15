@@ -1,9 +1,15 @@
 #!/bin/bash
 set -e
 
-# Create a processing endpoint in webroot if it doesn't exist and fix ownership/permissions.
-WEBROOT="/var/www/html"
+# Create a processing endpoint in the application current directory if it doesn't exist and fix ownership/permissions.
+# On Amazon Linux 2023 Elastic Beanstalk deployments the app is typically deployed to /var/app/current
+WEBROOT="/var/app/current"
 TARGET="$WEBROOT/processing.php"
+
+if [ ! -d "$WEBROOT" ]; then
+  # If the directory doesn't exist yet (unexpected on EB), create it safely
+  mkdir -p "$WEBROOT"
+fi
 
 if [ ! -f "$TARGET" ]; then
   cat > "$TARGET" <<'PHP'
@@ -24,4 +30,3 @@ fi
 chmod 0644 "$TARGET"
 
 echo "Post-deploy processing file ensured and permissions set."
-
