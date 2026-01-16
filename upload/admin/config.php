@@ -1,0 +1,35 @@
+<?php
+// APPLICATION
+define('APPLICATION', 'Admin');
+
+// HTTP
+define('HTTP_SERVER', 'http://martket.ap-southeast-1.elasticbeanstalk.com/martket/');
+define('HTTP_CATALOG', 'http://martket.ap-southeast-1.elasticbeanstalk.com');
+// DIR
+define('DIR_OPENCART', '/var/app/current/');
+define('DIR_APPLICATION', DIR_OPENCART . 'martket/');
+define('DIR_SYSTEM', DIR_OPENCART . 'system/');
+define('DIR_EXTENSION', DIR_OPENCART . 'extension/');
+define('DIR_IMAGE', DIR_OPENCART . 'image/');
+define('DIR_STORAGE', DIR_OPENCART . 'storage/');
+define('DIR_CATALOG', DIR_OPENCART . 'catalog/');
+define('DIR_LANGUAGE', DIR_APPLICATION . 'language/');
+define('DIR_TEMPLATE', DIR_APPLICATION . 'view/template/');
+define('DIR_CONFIG', DIR_SYSTEM . 'config/');
+define('DIR_CACHE', DIR_STORAGE . 'cache/');
+define('DIR_DOWNLOAD', DIR_STORAGE . 'download/');
+define('DIR_LOGS', DIR_STORAGE . 'logs/');
+define('DIR_SESSION', DIR_STORAGE . 'session/');
+define('DIR_UPLOAD', DIR_STORAGE . 'upload/');
+
+// DB
+define('DB_DRIVER', 'mysqli');
+define('DB_HOSTNAME', 'hanmartket.cfou0guiwa9v.ap-southeast-1.rds.amazonaws.com');
+define('DB_USERNAME', 'admin');
+define('DB_PASSWORD', 'G0s30C8s4sAMOOTvQV44');
+define('DB_DATABASE', 'HanMartket');
+define('DB_PREFIX', 'oc_');
+define('DB_PORT', '3306');
+
+// OpenCart API
+define('OPENCART_SERVER', 'https://www.opencart.com/');
