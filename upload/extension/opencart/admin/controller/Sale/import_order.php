@@ -162,4 +162,50 @@ class ImportOrder extends \Opencart\System\Engine\Controller {
 		$this->response->addHeader('Content-Length: ' . strlen($csv_content));
 		$this->response->setOutput($csv_content);
 	}
+
+	/**
+	 * Install - grant permissions for this extension to the current user group (typically Administrators)
+	 *
+	 * @return void
+	 */
+	public function install(): void {
+		// Ensure the installer has permission to run this
+		if (!$this->user->hasPermission('modify', 'extension/opencart/sale/import_order')) {
+			return;
+		}
+
+		$this->load->model('user/user_group');
+
+		$user_group_id = 1;
+		if (method_exists($this->user, 'getGroupId')) {
+			$user_group_id = (int)$this->user->getGroupId();
+		}
+
+		// Grant access and modify permissions for this extension route
+		$this->model_user_user_group->addPermission($user_group_id, 'access', 'extension/opencart/sale/import_order');
+		$this->model_user_user_group->addPermission($user_group_id, 'modify', 'extension/opencart/sale/import_order');
+	}
+
+	/**
+	 * Uninstall - remove permissions for this extension from the current user group
+	 *
+	 * @return void
+	 */
+	public function uninstall(): void {
+		// Ensure the caller has permission to perform uninstall
+		if (!$this->user->hasPermission('modify', 'extension/opencart/sale/import_order')) {
+			return;
+		}
+
+		$this->load->model('user/user_group');
+
+		$user_group_id = 1;
+		if (method_exists($this->user, 'getGroupId')) {
+			$user_group_id = (int)$this->user->getGroupId();
+		}
+
+		// Remove access and modify permissions for this extension route
+		$this->model_user_user_group->removePermission($user_group_id, 'access', 'extension/opencart/sale/import_order');
+		$this->model_user_user_group->removePermission($user_group_id, 'modify', 'extension/opencart/sale/import_order');
+	}
 }
