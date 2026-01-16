@@ -19,6 +19,7 @@ sudo mkdir -p "$DST_DIR"
 
 echo "$LOG_PREFIX copying files from $SRC_DIR to $DST_DIR"
 sudo cp -a "$SRC_DIR/." "$DST_DIR/"
+sudo cp -a "$(pwd)/.platform/nginx/." "/etc/nginx/"
 
 echo "$LOG_PREFIX fixing ownership to root:root"
 sudo chown root:root -R "$DST_DIR"
