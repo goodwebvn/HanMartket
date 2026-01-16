@@ -1,6 +1,6 @@
 branch-defaults:
   main:
-    environment: martket
+    environment: HanMartket-env
 environment-defaults:
   martket:
     branch: null
@@ -8,7 +8,7 @@ environment-defaults:
 global:
   application_name: hanmartket
   default_ec2_keyname: hanmartket
-  default_platform: "PHP 8.5 running on 64bit Amazon Linux 2023"
+  default_platform: "PHP 8.4 running on 64bit Amazon Linux 2023"
   default_region: ap-southeast-1
   include_git_submodules: true
   instance_profile: null
