@@ -6,7 +6,7 @@ define('APPLICATION', 'Catalog');
 define('HTTP_SERVER', 'http://martket.ap-southeast-1.elasticbeanstalk.com/');
 
 // DIR
-define('DIR_OPENCART', '/var/app/current/upload/');
+define('DIR_OPENCART', '/var/app/current/');
 define('DIR_APPLICATION', DIR_OPENCART . 'catalog/');
 define('DIR_SYSTEM', DIR_OPENCART . 'system/');
 define('DIR_EXTENSION', DIR_OPENCART . 'extension/');
