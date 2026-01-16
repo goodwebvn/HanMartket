@@ -3,11 +3,11 @@
 define('APPLICATION', 'Admin');
 
 // HTTP
-define('HTTP_SERVER', 'http://martket.ap-southeast-1.elasticbeanstalk.com/martket/');
-define('HTTP_CATALOG', 'http://martket.ap-southeast-1.elasticbeanstalk.com/');
+define('HTTP_SERVER', 'https://dn.goodweb.vn/market/');
+define('HTTP_CATALOG', 'https://dn.goodweb.vn/');
 // DIR
 define('DIR_OPENCART', '/var/app/current/');
-define('DIR_APPLICATION', DIR_OPENCART . 'martket/');
+define('DIR_APPLICATION', DIR_OPENCART . 'market/');
 define('DIR_SYSTEM', DIR_OPENCART . 'system/');
 define('DIR_EXTENSION', DIR_OPENCART . 'extension/');
 define('DIR_IMAGE', DIR_OPENCART . 'image/');

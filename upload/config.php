@@ -3,7 +3,7 @@
 define('APPLICATION', 'Catalog');
 
 // HTTP
-define('HTTP_SERVER', 'http://martket.ap-southeast-1.elasticbeanstalk.com/');
+define('HTTP_SERVER', 'https://dn.goodweb.vn/');
 
 // DIR
 define('DIR_OPENCART', '/var/app/current/');
