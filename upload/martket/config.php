@@ -1,6 +1,6 @@
 <?php
 // APPLICATION
-define('APPLICATION', 'Admin');
+define('APPLICATION', 'martket');
 
 // HTTP
 define('HTTP_SERVER', 'http://martket.ap-southeast-1.elasticbeanstalk.com/martket/');
