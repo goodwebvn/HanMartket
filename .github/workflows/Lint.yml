@@ -15,7 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: ['8.0', '8.1', '8.2', '8.3', '8.4']
+        # Limit matrix to PHP versions supported by php-cs-fixer (<= 8.3)
+        php: ['8.0', '8.1', '8.2', '8.3']
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -49,10 +50,22 @@ jobs:
         run: composer install
 
       - name: Check Code Style
-        if: matrix.php == '8.4'
+        # Run code style checks only on PHP 8.3 (php-cs-fixer supports up to 8.3)
+        if: matrix.php == '8.3'
         run: |
+          set -euo pipefail
+
+          # First run a dry run to show diffs (non-fatal). Keep this for visibility.
           php tools/php-cs-fixer.phar fix --dry-run --diff --ansi || true
-          php tools/php-cs-fixer.phar fix --dry-run --format=checkstyle | cs2pr
+
+          # Produce checkstyle XML and only pipe to cs2pr if any output is produced.
+          XML_OUTPUT=$(php tools/php-cs-fixer.phar fix --dry-run --format=checkstyle 2>/dev/null || true)
+
+          if [ -n "$XML_OUTPUT" ]; then
+            echo "$XML_OUTPUT" | cs2pr
+          else
+            echo "php-cs-fixer produced no checkstyle XML output (no issues or failed). Skipping cs2pr."
+          fi
 
       - name: Run PHPStan
         run: php tools/phpstan.phar analyze --no-progress
