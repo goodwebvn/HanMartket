@@ -22,8 +22,42 @@ jobs:
           aws-region: ap-southeast-1
 
       - name: Zip application
+        # Build a temporary staging directory that contains:
+        #  - the contents of `upload/` at the archive root
+        #  - the `.platform/` directory (so EB hooks are included)
         run: |
-          zip -r deploy.zip . -x ".git/*" -x ".github/*"
+          set -euo pipefail
+          STAGING_DIR="build_staging"
+          echo "Creating staging dir: $STAGING_DIR"
+          rm -rf "$STAGING_DIR"
+          mkdir -p "$STAGING_DIR"
+
+          echo "Copying contents of upload/ into staging root"
+          if [ -d "upload" ]; then
+            rsync -a --delete upload/ "$STAGING_DIR/"
+          else
+            echo "Warning: upload/ directory not found in repo" >&2
+          fi
+
+          # Include .platform directory at repo root if present (so EB hooks, config are present)
+          if [ -d ".platform" ]; then
+            echo "Including .platform/ into staging"
+            mkdir -p "$STAGING_DIR/.platform"
+            rsync -a .platform/ "$STAGING_DIR/.platform/"
+
+            # Ensure postdeploy hooks are executable in the staging area so EB will run them
+            if [ -d "$STAGING_DIR/.platform/hooks/postdeploy" ]; then
+              echo "Making postdeploy hooks executable"
+              chmod +x "$STAGING_DIR/.platform/hooks/postdeploy/"*.sh || true
+            fi
+          fi
+
+          # Optionally include any other top-level files you want at webroot (e.g., .env templates)
+
+          # Create zip from staging dir contents so files are at archive root
+          echo "Creating deploy.zip from staging contents"
+          (cd "$STAGING_DIR" && zip -r -q ../deploy.zip .)
+          ls -l deploy.zip
 
       - name: Upload to S3
         env:
@@ -60,4 +94,5 @@ jobs:
 
 # Notes:
 # - Store these GitHub Secrets in the repository settings: AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, EB_APP_NAME, EB_ENV_NAME, EB_S3_BUCKET
-# - The workflow zips the repository root; adjust excludes if you want to exclude additional files.
+# - The workflow now zips the contents of `upload/` into the archive root and includes `.platform/` so EB hooks will run.
+# - If you need additional top-level files (composer.json, vendor, etc.) add copy steps into the staging dir above.
